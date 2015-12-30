@@ -1,0 +1,22 @@
+
+\begin{resume}
+
+\section*{1.\hspace{0.75em}基本情况}
+刘芮杉，女，陕西汉中人，~1991~年~5~月出生，西安电子科技大学电子工程学院电子与通信工程专业~2013~级硕士研究生。
+\section*{2.\hspace{0.75em}教育背景}
+\begin{resumelist*}
+\resumelistitem 2009.08～~2013.07，西安电子科技大学，本科，专业：电子信息工程
+\resumelistitem 2013.08～\hspace{3.5em}，西安电子科技大学，硕士研究生，专业：电子与通信工程
+\end{resumelist*}
+
+\section*{3.\hspace{0.75em}攻读硕士学位期间的研究成果}
+\begin{resumelist}{\hspace{-0.25em}3.1\hspace{0.5em} 发表学术论文}
+\resumelistitem Ruishan Liu and Yanhua Yang and Cheng Deng. Recognizing Human Actions by Sharing Knowledge in Implicit Action
+Groups[C] Advances in Multimedia Information Processing - PCM 2015 - 16th Pacific-Rim Conference on Multimedia, Gwangju, South Korea, September 16-18, 2015, Proceedings, Part I. 2015: 644–652.
+\end{resumelist}
+
+\begin{resumelist}{\hspace{-0.25em}3.2\hspace{0.5em} 参与科研项目及获奖}
+\resumelistitem ”十二五“国家高技术研究发展计划（863计划）智慧城市（二期）延安市智能应用支撑平台关键技术研究与应用示范~2013.1-2015.12
+\resumelistitem 国家自然科学基金面上项目 多视角自适应哈希学习及其应用~2016.1-2019.12
+\end{resumelist}
+\end{resume}

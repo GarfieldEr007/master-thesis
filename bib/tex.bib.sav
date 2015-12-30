@@ -1,0 +1,136 @@
+@inproceedings{CaiWPQ14,
+  author    = {Zhuowei Cai and Limin Wang and Xiaojiang Peng
+               Yu Qiao},
+  title     = {Multi-View Super Vector for Action Recognition},
+  booktitle = {CVPR},
+  year      = {2014},
+}
+
+@inproceedings{PengZQP14,
+  author    = {Xiaojiang Peng and
+               Changqing Zou and
+               Yu Qiao and
+               Qiang Peng},
+  title     = {Action Recognition with Stacked Fisher Vectors},
+  booktitle = {ECCV},
+  year      = {2014},
+
+}
+
+@inproceedings{OneataVS13,
+  author    = {Dan Oneata and
+               Jakob J. Verbeek and
+               Cordelia Schmid},
+  title     = {Action and Event Recognition with Fisher Vectors on a Compact Feature Set},
+  booktitle = {ICCV},
+  year      = {2013},
+}
+
+@inproceedings{LawrenceP04,
+  author    = {Neil D. Lawrence and
+               John C. Platt},
+  title     = {Learning to learn with the informative vector machine},
+  booktitle = {ICML},
+  year      = {2004},
+}
+
+@article{BakkerH03,
+  author    = {Bart Bakker and
+               Tom Heskes},
+  title     = {Task Clustering and Gating for Bayesian Multitask Learning},
+  journal   = {Journal of Machine Learning Research},
+  volume    = {4},
+  pages     = {83--99},
+  year      = {2003},
+}
+
+@article{ArgyriouEP08,
+  author    = {Andreas Argyriou and
+               Theodoros Evgeniou and
+               Massimiliano Pontil},
+  title     = {Convex multi-task feature learning},
+  journal   = {Machine Learning},
+  volume    = {73},
+  number    = {3},
+  pages     = {243--272},
+  year      = {2008},
+}
+
+@article{abs-1205-2631,
+  author    = {Jun Liu and
+               Shuiwang Ji and
+               Jieping Ye},
+  title     = {Multi-Task Feature Learning Via Efficient l2,1-Norm Minimization},
+  journal   = {CoRR},
+  volume    = {abs/1205.2631},
+  year      = {2012},
+}
+
+@inproceedings{EvgeniouP04,
+  author    = {Theodoros Evgeniou and
+               Massimiliano Pontil},
+  title     = {Regularized multi--task learning},
+  booktitle = {SIGKDD},
+  pages     = {109--117},
+  year      = {2004},
+}
+
+@inproceedings{GongYZ12,
+  author    = {Pinghua Gong and
+               Jieping Ye and
+               Changshui Zhang},
+  title     = {Robust multi-task feature learning},
+  booktitle = {SIGKDD},
+  pages     = {895--903},
+  year      = {2012},
+}
+@inproceedings{KangGS11,
+  author    = {Zhuoliang Kang and
+               Kristen Grauman and
+               Fei Sha},
+  title     = {Learning with Whom to Share in Multi-task Feature Learning},
+  booktitle = {ICML},
+  pages     = {521--528},
+  year      = {2011},
+}
+
+@inproceedings{JacobBV08,
+  author    = {Laurent Jacob and
+               Francis R. Bach and
+               Jean{-}Philippe Vert},
+  title     = {Clustered Multi-Task Learning: {A} Convex Formulation},
+  booktitle = {Advances in Neural Information Processing Systems 21, Proceedings
+               of the Twenty-Second Annual Conference on Neural Information Processing
+               Systems, Vancouver, British Columbia, Canada, December 8-11, 2008},
+  pages     = {745--752},
+  year      = {2008},
+}
+
+@inproceedings{KumarD12,
+  author    = {Abhishek Kumar and
+               Hal Daum{\'{e}} III},
+  title     = {Learning Task Grouping and Overlap in Multi-task Learning},
+  booktitle = {ICML},
+  year      = {2012},
+}
+
+@inproceedings{JayaramanSG14,
+  author    = {Dinesh Jayaraman and
+               Fei Sha and
+               Kristen Grauman},
+  title     = {Decorrelating Semantic Visual Attributes by Resisting the Urge to
+               Share},
+  booktitle = {CVPR},
+  pages     = {1629--1636},
+  year      = {2014},
+}
+
+@inproceedings{ArgyriouEP06,
+  author    = {Andreas Argyriou and
+               Theodoros Evgeniou and
+               Massimiliano Pontil},
+  title     = {Multi-Task Feature Learning},
+  booktitle = {NIPS},
+  pages     = {41--48},
+  year      = {2006},
+}

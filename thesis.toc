@@ -1,0 +1,45 @@
+\contentsline {chapter}{摘要}{I}{section*.1}
+\contentsline {chapter}{ABSTRACT}{III}{section*.3}
+\contentsline {chapter}{插图索引}{V}{section*.5}
+\contentsline {chapter}{表格索引}{VII}{section*.7}
+\contentsline {chapter}{符号对照表}{IX}{section*.9}
+\contentsline {chapter}{缩略语对照表}{XI}{section*.11}
+\contentsline {chapter}{\numberline {第一\ignorespaces 章\hspace {0.3em}}绪论}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1\ignorespaces }研究背景及意义}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2\ignorespaces }行为识别的研究现状}{2}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1\ignorespaces }现有技术分析}{2}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2\ignorespaces }现存主要问题}{4}{subsection.1.2.2}
+\contentsline {section}{\numberline {1.3\ignorespaces }论文的主要研究内容及工作安排}{5}{section.1.3}
+\contentsline {chapter}{\numberline {第二\ignorespaces 章\hspace {0.3em}}多任务学习方法}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1\ignorespaces }引言}{7}{section.2.1}
+\contentsline {section}{\numberline {2.2\ignorespaces }多任务学习方法概述}{7}{section.2.2}
+\contentsline {section}{\numberline {2.3\ignorespaces }常用的多任务学习方法}{9}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1\ignorespaces }基于\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces $\ell _{2,1}$\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 范数的多任务学习}{9}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2\ignorespaces }基于组约束的多任务学习}{10}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4\ignorespaces }本章小结}{14}{section.2.4}
+\contentsline {chapter}{\numberline {第三\ignorespaces 章\hspace {0.3em}}基于类别边界距离的多任务行为识别}{15}{chapter.3}
+\contentsline {section}{\numberline {3.1\ignorespaces }引言}{15}{section.3.1}
+\contentsline {section}{\numberline {3.2\ignorespaces }基于类别边界距离的多任务行为识别}{15}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1\ignorespaces }SVM}{15}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2\ignorespaces }基于\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces SVM\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 的相似性度量}{18}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3\ignorespaces }目标函数的建立和优化}{19}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3\ignorespaces }实验结果与分析}{21}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1\ignorespaces }实验设计}{21}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2\ignorespaces }实验结果}{22}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4\ignorespaces }本章小结}{24}{section.3.4}
+\contentsline {chapter}{\numberline {第四\ignorespaces 章\hspace {0.3em}}基于类别高斯分布的多任务行为识别}{27}{chapter.4}
+\contentsline {section}{\numberline {4.1\ignorespaces }引言}{27}{section.4.1}
+\contentsline {section}{\numberline {4.2\ignorespaces }Fisher Vector}{28}{section.4.2}
+\contentsline {section}{\numberline {4.3\ignorespaces }基于类别高斯分布的多任务行为识别}{30}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1\ignorespaces }基于互信息的相似性度量}{30}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2\ignorespaces }基于类别高斯分布的多任务行为识别}{33}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4\ignorespaces }实验结果与分析}{33}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1\ignorespaces }实验设计}{33}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2\ignorespaces }实验结果与分析}{34}{subsection.4.4.2}
+\contentsline {section}{\numberline {4.5\ignorespaces }本章小结}{37}{section.4.5}
+\contentsline {chapter}{\numberline {第五\ignorespaces 章\hspace {0.3em}}总结与展望}{39}{chapter.5}
+\contentsline {section}{\numberline {5.1\ignorespaces }总结}{39}{section.5.1}
+\contentsline {section}{\numberline {5.2\ignorespaces }展望}{40}{section.5.2}
+\contentsline {chapter}{参考文献}{41}{section*.14}
+\contentsline {chapter}{致谢}{46}{section*.16}
+\contentsline {chapter}{作者简介}{48}{section*.18}

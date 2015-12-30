@@ -1,0 +1,68 @@
+
+\begin{abstract}
+人体行为识别一直是计算机视觉领域的重要研究课题之一。它具有极高的商业价值和广阔的应用市场，如视频监控、视频检索和智能人机交互等。绝大多数现有的行为识别方法主要将研究的对象局限于可控环境下录制的视频。然而由于背景遮挡、视角变化和堵塞等问题，这些方法很难处理拍摄于真实环境下的视频，从而无法满足工业界的需求，因此提出切实可行的人体行为识别方法迫在眉睫。
+
+传统的行为识别方法将数据库中的行为类别视为独立的任务，忽略了它们之间内在联系。然而无论是在数据库还是现实生
+活中，类别之间都具有一定的关系，相似的类别可以被分为同一组，从而分享相同的特征。在分类器的训练过程中加入类别关系的约束，可以充分地利用类别间共享的特征信息，为相似的类别学习共同的特征表示，在降低对大量训练数据依赖的同时，提高了模型的泛化能力。基于此，本论文利用多任务学习方法挖掘了类别结构关系，主要工作如下：
+
+首先，本文提出了一种基于类别边界距离的多任务行为识别方法。具体地，首先对数据库中的每对行为训练支持向量分类器，利用得到的支持向量计算两个行为之间的边界距离，并用其来衡量行为之间的相似度；随后将相似度矩阵聚类后得到类别中潜在的结构关系；通过将此结构关系作为先验正则项融入到多任务学习框架中，可以尽可能地实现类别保持，鼓励同属于一组的行为类别实现特征共享。在~HMDB51~ 和~UCF50~ 两个公开行为数据库上的实验结果表明了该算法可以明显提高分类模型的性能。
+
+其次，本文提出了一种基于类别高斯分布的多任务行为识别方法。该方法建立在~Fisher Vector~特征的基础之上。Fisher Vector~ 中的连续维度特征对应着一个高斯分布，不同的高斯分布和不同的行为类别之间的亲疏程度不同。该方法直接从特征入手，通过计算每个高斯分布对于每一个行为类别的互信息来衡量其对此类别的重要性，仅保留重要的高斯分布对应的特征。用每对类别同时保留的高斯分布的个数来表示它们之间的距离，从而得到更准确的行为类别结构，结合基于组约束的多任务学习方法实现行为识别。在~HMDB51~ 和~UCF50~ 上的实验结果表明了此算法获得了较好的行为识别结果。
+
+\keywords{行为识别,\quad{}多任务学习,\quad{}SVM~,\quad{}Fisher Vector,\quad{}类别保持}\par
+\end{abstract}
+
+\begin{englishabstract}
+Recognizing human action has been an important research area in computer vision while enabling wide applications, e.g., surveillance, human-computer interaction and so forth. Most research mainly focused on videos containing simple actions recorded in controlled settings. However, there is still a great challenge to recognize actions from more realistic datasets due to background clutter, viewpoint changes and occlusion. An efficient and robust action recognition method is in urgent need with the rapid growth of the number of videos.
+\par~\par
+Most action recognition approaches ignored the relationships among multiple action categories. However, action categories are correlated and share common features. Training classifiers with category preserving could take full advantage of common features shared between categories, while improving the generalization performance with less videos. In this paper, we explore to share knowledge in action categories in a multi-task learning framework.
+\par~\par
+Firstly, we propose multi-task action recognition based on category boundary distance. The proposed method leverages support vector machine to measure the degree of similarity between each pair of categories and obtains the implicit group structure by clustering. In order to encourage the categories in the same group to share feature and vice versa, the implicit group structure is used as the prior regularization in multi-task learning. Our experiments on datasets HMDB51 and UCF50 show that the proposed method has achieved the comparative even higher accuracy over several state-of-the-art approaches.
+\par~\par
+Secondly, we propose multi-task action recognition based on category Gaussian distribution. We employ Fisher Vector for video representation, which is concatenated by the gradients of likelihood with respect to the mean vector and covariance parameters of GMM and that the contribution of each Gaussian component to different action classes can be different. The proposed method employs mutual information to evaluate the importance of a Gaussian component in classifying a certain category. Only feature dimension of the Gaussian with a higher score remains. The number of Gaussian components that two categories hold at the same time is counted to measure the degree of similarity between them. Based on the similarity relationship the accurate implicit group structure of categories would be obtained by clustering and combined with multi-task learning framework to recognize actions. Experimental results on datasets HMDB51 and UCF50 show that the proposed method achieves an obvious improvement of accuracy over several state-of-the-art approaches.
+
+\englishkeywords{Action Recognition,\space{}Multi-task Learning,\space{}SVM,\space{}Fisher Vector,\space{}Category Preserving}
+
+\end{englishabstract}
+
+\XDUpremainmatter
+
+\begin{symbollist}
+\raggedright
+\item ~符号 \hspace{12.5em} 符号名称
+\item ~$C$ \hspace{12.5em} 数据库中的任务/类别个数
+\item ~$K$ \hspace{12.4em} 高斯混合模型中高斯函数的个数
+\item ~$\mathbf{W}$ \hspace{12.05em} 分类矩阵
+\item ~$N_c$ \hspace{12.07em} 第~$c$~个类别中的样本个数
+\item ~$\mathbf{x}_{ci}$ \hspace{12.05em} 来自第~$c$~个类别的第~$i$~个样本的特征向量
+\item ~$\mathbf{y}_{ci}$ \hspace{12.05em} 来自第~$c$~个类别的第~$i$~个样本的标签
+\item ~$\mathbf{w}_{c}$ \hspace{12.05em} 第~$c$~个类别对应的分类参数向量
+\item ~$\mathbf{w}^{d,g_l}$ \hspace{11.15em} 第~$g_l$~组的所有任务对应第~$d$~ 维特征的权重参数
+\item ~$\mathbf{x}_{:}^k$  \hspace{12.15em} 数据库所有样本对应第~$k$~个高斯函数的特征矩阵
+\item ~$\mathbf{I}$ \hspace{12.75em} 互信息矩阵
+\item ~$I_{c,k}(\mathbf{x}_{:}^k,\mathbf{y})$~  \hspace{9.1em} 第~$c$~个行为类别和第~$k$~个高斯函数之间的互信息
+\item ~$\mathbf{S}$ \hspace{12.55em} 相似度矩阵
+
+\end{symbollist}
+
+\begin{abbreviationlist}
+\raggedright
+\item 缩略语\hspace{6em}英文全称\hspace{12em}中文对照
+\item ~BoVW \hspace{5.4em} Bag of Visual Words  \hspace{7.3em} 词袋模型
+\item ~DTW \hspace{6em} Dynamic Time Warping \hspace{6em} 动态时间变形
+\item ~RMTFL \hspace{5.2em}Robust Multi-task Feature Learning \hspace{1.2em} 鲁棒的多任务特征学习
+\item ~SVM \hspace{6.2em} Support Vector Machines \hspace{5.3em} 支持向量机
+\item ~GMM \hspace{5.8em} Gaussian Mixture Model \hspace{5.5em} 高斯混合模型
+\item ~MTL \hspace{6.2em} Multi-task Learning \hspace{7.5em} 多任务学习
+\item ~HOG \hspace{6.2em} Histogram of Oriented Gradient \hspace{2.7em} 方向梯度直方图
+\item ~HOF \hspace{6.4em} Histograms of Optical Flow \hspace{4.3em} 光流场方向直方图
+\item ~MBH \hspace{6.1em} Motion Boundary Histogram \hspace{4em} 移动边缘直方图
+\item ~PCA \hspace{6.5em} Principal Components Analysis \hspace{2.8em} 主成分分析
+\item ~EM \hspace{6.9em} Expectation Maximization \hspace{5em} 最大期望算法
+
+
+%\item \ldots
+%
+
+
+\end{abbreviationlist}

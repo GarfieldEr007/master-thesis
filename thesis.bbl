@@ -1,0 +1,429 @@
+\begin{thebibliography}{10}
+\providecommand{\bibauthor}[1]{#1}
+\providecommand{\bibeditor}[1]{#1}
+\providecommand{\bibtranslator}[1]{#1}
+\providecommand{\bibtitle}[1]{#1}
+\providecommand{\bibbooktitle}[1]{#1}
+\providecommand{\bibjournal}[1]{#1}
+\providecommand{\bibmark}[1]{#1}
+\providecommand{\bibcountry}[1]{#1}
+\providecommand{\bibpatentid}[1]{#1}
+\providecommand{\bibedition}[1]{#1}
+\providecommand{\biborganization}[1]{#1}
+\providecommand{\bibaddress}[1]{#1}
+\providecommand{\bibpublisher}[1]{#1}
+\providecommand{\bibinstitution}[1]{#1}
+\providecommand{\bibschool}[1]{#1}
+\providecommand{\bibvolume}[1]{#1}
+\providecommand{\bibnumber}[1]{#1}
+\providecommand{\bibversion}[1]{#1}
+\providecommand{\bibpages}[1]{#1}
+\providecommand{\bibmodifydate}[1]{#1}
+\providecommand{\bibcitedate}[1]{#1}
+\providecommand{\bibyear}[1]{#1}
+\providecommand{\bibdate}[1]{#1}
+\providecommand{\biburl}[1]{\newline\url{#1}}
+
+\bibitem{AggarwalR11}
+\bibauthor{AGGARWAL J~K\@, RYOO M~S}\@. \bibtitle{Human activity analysis: A
+  review}\bibmark{[J]}\@. \bibjournal{ACM Comput. Surv}\@, \bibyear{2011}\@,
+  \bibvolume{43}\bibnumber{(3)}\thinspace{}\textnormal{: }\bibpages{16}\@.
+
+\bibitem{KeHLHYC13}
+\bibauthor{KE S-R\@, HOANG L~U~T\@, LEE Y-J, et~al}\@. \bibtitle{A Review on
+  Video-Based Human Activity Recognition}\bibmark{[J]}\@.
+  \bibjournal{Computers}\@, \bibyear{2013}\@,
+  \bibvolume{2}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{88\thinspace{}\textnormal{--}\thinspace{}131}\@.
+
+\bibitem{Collins00asystem}
+\bibauthor{COLLINS R~T\@, LIPTON A~J\@, KANADE T, et~al}\@. \bibtitle{A System
+  for Video Surveillance and Monitoring}\bibmark{[J]}\@, \bibyear{2000}\@.
+
+\bibitem{GorelickBSIB07}
+\bibauthor{GORELICK L\@, BLANK M\@, SHECHTMAN E, et~al}\@. \bibtitle{Actions as
+  Space-Time Shapes}\bibmark{[J]}\@. \bibjournal{{IEEE} Trans. Pattern Anal.
+  Mach. Intell.}\@, \bibyear{2007}\@,
+  \bibvolume{29}\bibnumber{(12)}\thinspace{}\textnormal{:
+  }\bibpages{2247\thinspace{}\textnormal{--}\thinspace{}2253}\@.
+
+\bibitem{DarrellP93}
+\bibauthor{DARRELL T\@, PENTLAND A}\@. \bibtitle{Space-time
+  gestures}\bibmark{[C]} //\thinspace{}\bibbooktitle{Conference on Computer
+  Vision and Pattern Recognition, {CVPR} 1993, 15-17 June, 1993, New York, NY,
+  {USA}}\@. \bibyear{1993}\thinspace{}\textnormal{:
+  }\bibpages{335\thinspace{}\textnormal{--}\thinspace{}340}\@.
+
+\bibitem{BerndtC94}
+\bibauthor{BERNDT D~J\@, CLIFFORD J}\@. \bibtitle{Using Dynamic Time Warping to
+  Find Patterns in Time Series}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Knowledge Discovery in Databases: Papers from the
+  1994 {AAAI} Workshop, Seattle, Washington, July 1994. Technical Report
+  {WS-94-03}}\@. \bibyear{1994}\thinspace{}\textnormal{:
+  }\bibpages{359\thinspace{}\textnormal{--}\thinspace{}370}\@.
+
+\bibitem{GreenG04}
+\bibauthor{GREEN R~D\@, GUAN L}\@. \bibtitle{Quantifying and recognizing human
+  movement patterns from monocular video Images-part {I:} a new framework for
+  modeling human motion}\bibmark{[J]}\@. \bibjournal{{IEEE} Trans. Circuits
+  Syst. Video Techn.}\@, \bibyear{2004}\@,
+  \bibvolume{14}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{179\thinspace{}\textnormal{--}\thinspace{}190}\@.
+
+\bibitem{BobickD01}
+\bibauthor{BOBICK A~F\@, DAVIS J~W}\@. \bibtitle{The Recognition of Human
+  Movement Using Temporal Templates}\bibmark{[J]}\@. \bibjournal{{IEEE} Trans.
+  Pattern Anal. Mach. Intell.}\@, \bibyear{2001}\@,
+  \bibvolume{23}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{257\thinspace{}\textnormal{--}\thinspace{}267}\@.
+
+\bibitem{KeSH07}
+\bibauthor{KE Y\@, SUKTHANKAR R\@, HEBERT M}\@. \bibtitle{Spatio-temporal Shape
+  and Flow Correlation for Action Recognition}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{2007 {IEEE} Computer Society Conference on
+  Computer Vision and Pattern Recognition {(CVPR} 2007), 18-23 June 2007,
+  Minneapolis, Minnesota, {USA}}\@. \bibyear{2007}\@.
+
+\bibitem{RodriguezAS08}
+\bibauthor{RODRIGUEZ M~D\@, AHMED J\@, SHAH M}\@. \bibtitle{Action {MACH} a
+  spatio-temporal Maximum Average Correlation Height filter for action
+  recognition}\bibmark{[C]} //\thinspace{}\bibbooktitle{2008 {IEEE} Computer
+  Society Conference on Computer Vision and Pattern Recognition {(CVPR} 2008),
+  24-26 June 2008, Anchorage, Alaska, {USA}}\@. \bibyear{2008}\@.
+
+\bibitem{BlankGSIB05}
+\bibauthor{BLANK M\@, GORELICK L\@, SHECHTMAN E, et~al}\@. \bibtitle{Actions as
+  Space-Time Shapes}\bibmark{[C]} //\thinspace{}\bibbooktitle{10th {IEEE}
+  International Conference on Computer Vision {(ICCV} 2005), 17-20 October
+  2005, Beijing, China}\@. \bibyear{2005}\thinspace{}\textnormal{:
+  }\bibpages{1395\thinspace{}\textnormal{--}\thinspace{}1402}\@.
+
+\bibitem{YilmazS05}
+\bibauthor{YILMAZ A\@, SHAH M}\@. \bibtitle{Recognizing Human Actions in Videos
+  Acquired by Uncalibrated Moving Cameras}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{10th {IEEE} International Conference on Computer
+  Vision {(ICCV} 2005), 17-20 October 2005, Beijing, China}\@.
+  \bibyear{2005}\thinspace{}\textnormal{:
+  }\bibpages{150\thinspace{}\textnormal{--}\thinspace{}157}\@.
+
+\bibitem{SheikhSS05}
+\bibauthor{SHEIKH Y\@, SHEIKH M\@, SHAH M}\@. \bibtitle{Exploring the Space of
+  a Human Action}\bibmark{[C]} //\thinspace{}\bibbooktitle{10th {IEEE}
+  International Conference on Computer Vision {(ICCV} 2005), 17-20 October
+  2005, Beijing, China}\@. \bibyear{2005}\thinspace{}\textnormal{:
+  }\bibpages{144\thinspace{}\textnormal{--}\thinspace{}149}\@.
+
+\bibitem{RaoS01}
+\bibauthor{RAO C\@, SHAH M}\@. \bibtitle{View-Invariance in Action
+  Recognition}\bibmark{[C]} //\thinspace{}\bibbooktitle{2001 {IEEE} Computer
+  Society Conference on Computer Vision and Pattern Recognition {(CVPR} 2001),
+  with CD-ROM, 8-14 December 2001, Kauai, HI, {USA}}\@.
+  \bibyear{2001}\thinspace{}\textnormal{:
+  }\bibpages{316\thinspace{}\textnormal{--}\thinspace{}322}\@.
+
+\bibitem{wang2011}
+\bibauthor{WANG H\@, KL{\"{A}}SER A\@, SCHMID C, et~al}\@. \bibtitle{Action
+  recognition by dense trajectories}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{The 24th {IEEE} Conference on Computer Vision and
+  Pattern Recognition, {CVPR} 2011, Colorado Springs, CO, USA, 20-25 June
+  2011}\@. \bibyear{2011}\thinspace{}\textnormal{:
+  }\bibpages{3169\thinspace{}\textnormal{--}\thinspace{}3176}\@.
+
+\bibitem{Wang2013}
+\bibauthor{WANG H\@, SCHMID C}\@. \bibtitle{Action Recognition with Improved
+  Trajectories}\bibmark{[C]} //\thinspace{}\bibbooktitle{{IEEE} International
+  Conference on Computer Vision, {ICCV} 2013, Sydney, Australia, December 1-8,
+  2013}\@. \bibyear{2013}\thinspace{}\textnormal{:
+  }\bibpages{3551\thinspace{}\textnormal{--}\thinspace{}3558}\@.
+
+\bibitem{ChomatC99}
+\bibauthor{CHOMAT O\@, CROWLEY J~L}\@. \bibtitle{Probabilistic Recognition of
+  Activity using Local Appearance}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{1999 Conference on Computer Vision and Pattern
+  Recognition {(CVPR} '99), 23-25 June 1999, Ft. Collins, CO, {USA}}\@.
+  \bibyear{1999}\thinspace{}\textnormal{:
+  }\bibpages{2104\thinspace{}\textnormal{--}\thinspace{}2109}\@.
+
+\bibitem{Zelnik-ManorI01}
+\bibauthor{ZELNIK{-}MANOR L\@, IRANI M}\@. \bibtitle{Event-Based Analysis of
+  Video}\bibmark{[C]} //\thinspace{}\bibbooktitle{2001 {IEEE} Computer Society
+  Conference on Computer Vision and Pattern Recognition {(CVPR} 2001), with
+  CD-ROM, 8-14 December 2001, Kauai, HI, {USA}}\@.
+  \bibyear{2001}\thinspace{}\textnormal{:
+  }\bibpages{123\thinspace{}\textnormal{--}\thinspace{}130}\@.
+
+\bibitem{LaptevL03}
+\bibauthor{LAPTEV I\@, LINDEBERG T}\@. \bibtitle{Space-time Interest
+  Points}\bibmark{[C]} //\thinspace{}\bibbooktitle{9th {IEEE} International
+  Conference on Computer Vision {(ICCV} 2003), 14-17 October 2003, Nice,
+  France}\@. \bibyear{2003}\thinspace{}\textnormal{:
+  }\bibpages{432\thinspace{}\textnormal{--}\thinspace{}439}\@.
+
+\bibitem{Dollar05}
+\bibauthor{DOLL¨¢R P\@, RABAUD V\@, COTTRELL G, et~al}\@. \bibtitle{Behavior
+  recognition via sparse spatio-temporal features}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{In VS-PETS}\@.
+  \bibyear{2005}\thinspace{}\textnormal{:
+  }\bibpages{65\thinspace{}\textnormal{--}\thinspace{}72}\@.
+
+\bibitem{PengWWQ14}
+\bibauthor{PENG X\@, WANG L\@, WANG X, et~al}\@. \bibtitle{Bag of Visual Words
+  and Fusion Methods for Action Recognition: Comprehensive Study and Good
+  Practice}\bibmark{[J]}\@. \bibjournal{CoRR}\@, \bibyear{2014}\@,
+  \bibvolume{abs/1405.4506}\@.
+
+\bibitem{CaiWPQ14}
+\bibauthor{CAI Z\@, WANG L\@, PENG X, et~al}\@. \bibtitle{Multi-view Super
+  Vector for Action Recognition}\bibmark{[C]} //\thinspace{}\bibbooktitle{2014
+  {IEEE} Conference on Computer Vision and Pattern Recognition, {CVPR} 2014,
+  Columbus, OH, USA, June 23-28, 2014}\@.
+  \bibyear{2014}\thinspace{}\textnormal{:
+  }\bibpages{596\thinspace{}\textnormal{--}\thinspace{}603}\@.
+
+\bibitem{PengZQP14}
+\bibauthor{PENG X\@, ZOU C\@, QIAO Y, et~al}\@. \bibtitle{Action Recognition
+  with Stacked Fisher Vectors}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Computer Vision - {ECCV} 2014 - 13th European
+  Conference, Zurich, Switzerland, September 6-12, 2014, Proceedings, Part
+  {V}}\@. \bibyear{2014}\thinspace{}\textnormal{:
+  }\bibpages{581\thinspace{}\textnormal{--}\thinspace{}595}\@.
+
+\bibitem{OneataVS13}
+\bibauthor{ONEATA D\@, VERBEEK J~J\@, SCHMID C}\@. \bibtitle{Action and Event
+  Recognition with Fisher Vectors on a Compact Feature Set}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{{IEEE} International Conference on Computer
+  Vision, {ICCV} 2013, Sydney, Australia, December 1-8, 2013}\@.
+  \bibyear{2013}\thinspace{}\textnormal{:
+  }\bibpages{1817\thinspace{}\textnormal{--}\thinspace{}1824}\@.
+
+\bibitem{Caruana97}
+\bibauthor{CARUANA R}\@. \bibtitle{Multitask Learning}\bibmark{[J]}\@.
+  \bibjournal{Machine Learning}\@, \bibyear{1997}\@,
+  \bibvolume{28}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{41\thinspace{}\textnormal{--}\thinspace{}75}\@.
+
+\bibitem{LawrenceP04}
+\bibauthor{LAWRENCE N~D\@, PLATT J~C}\@. \bibtitle{Learning to learn with the
+  informative vector machine}\bibmark{[C]} //\thinspace{}\bibbooktitle{Machine
+  Learning, Proceedings of the Twenty-first International Conference {(ICML}
+  2004), Banff, Alberta, Canada, July 4-8, 2004}\@. \bibyear{2004}\@.
+
+\bibitem{BakkerH03}
+\bibauthor{BAKKER B\@, HESKES T}\@. \bibtitle{Task Clustering and Gating for
+  Bayesian Multitask Learning}\bibmark{[J]}\@. \bibjournal{Journal of Machine
+  Learning Research}\@, \bibyear{2003}\@,
+  \bibvolume{4}\thinspace{}\textnormal{:
+  }\bibpages{83\thinspace{}\textnormal{--}\thinspace{}99}\@.
+
+\bibitem{EvgeniouP04}
+\bibauthor{EVGENIOU T\@, PONTIL M}\@. \bibtitle{Regularized multi--task
+  learning}\bibmark{[C]} //\thinspace{}\bibbooktitle{SIGKDD}\@.
+  \bibyear{2004}\thinspace{}\textnormal{:
+  }\bibpages{109\thinspace{}\textnormal{--}\thinspace{}117}\@.
+
+\bibitem{ArgyriouEP06}
+\bibauthor{ARGYRIOU A\@, EVGENIOU T\@, PONTIL M}\@. \bibtitle{Multi-Task
+  Feature Learning}\bibmark{[C]} //\thinspace{}\bibbooktitle{Advances in Neural
+  Information Processing Systems 19, Proceedings of the Twentieth Annual
+  Conference on Neural Information Processing Systems, Vancouver, British
+  Columbia, Canada, December 4-7, 2006}\@.
+  \bibyear{2006}\thinspace{}\textnormal{:
+  }\bibpages{41\thinspace{}\textnormal{--}\thinspace{}48}\@.
+
+\bibitem{JacobBV08}
+\bibauthor{JACOB L\@, BACH F~R\@, VERT J}\@. \bibtitle{Clustered Multi-Task
+  Learning: {A} Convex Formulation}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Advances in Neural Information Processing Systems
+  21, Proceedings of the Twenty-Second Annual Conference on Neural Information
+  Processing Systems, Vancouver, British Columbia, Canada, December 8-11,
+  2008}\@. \bibyear{2008}\thinspace{}\textnormal{:
+  }\bibpages{745\thinspace{}\textnormal{--}\thinspace{}752}\@.
+
+\bibitem{KangGS11}
+\bibauthor{KANG Z\@, GRAUMAN K\@, SHA F}\@. \bibtitle{Learning with Whom to
+  Share in Multi-task Feature Learning}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Proceedings of the 28th International Conference
+  on Machine Learning, {ICML} 2011, Bellevue, Washington, USA, June 28 - July
+  2, 2011}\@. \bibyear{2011}\thinspace{}\textnormal{:
+  }\bibpages{521\thinspace{}\textnormal{--}\thinspace{}528}\@.
+
+\bibitem{GongYZ12}
+\bibauthor{GONG P\@, YE J\@, ZHANG C}\@. \bibtitle{Robust multi-task feature
+  learning}\bibmark{[C]} //\thinspace{}\bibbooktitle{The 18th {ACM} {SIGKDD}
+  International Conference on Knowledge Discovery and Data Mining, {KDD} '12,
+  Beijing, China, August 12-16, 2012}\@.
+  \bibyear{2012}\thinspace{}\textnormal{:
+  }\bibpages{895\thinspace{}\textnormal{--}\thinspace{}903}\@.
+
+\bibitem{JayaramanSG14}
+\bibauthor{JAYARAMAN D\@, SHA F\@, GRAUMAN K}\@. \bibtitle{Decorrelating
+  Semantic Visual Attributes by Resisting the Urge to Share}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{2014 {IEEE} Conference on Computer Vision and
+  Pattern Recognition, {CVPR} 2014, Columbus, OH, USA, June 23-28, 2014}\@.
+  \bibyear{2014}\thinspace{}\textnormal{:
+  }\bibpages{1629\thinspace{}\textnormal{--}\thinspace{}1636}\@.
+
+\bibitem{KumarD12}
+\bibauthor{KUMAR A\@, III H~D}\@. \bibtitle{Learning Task Grouping and Overlap
+  in Multi-task Learning}\bibmark{[C]} //\thinspace{}\bibbooktitle{Proceedings
+  of the 29th International Conference on Machine Learning, {ICML} 2012,
+  Edinburgh, Scotland, UK, June 26 - July 1, 2012}\@. \bibyear{2012}\@.
+
+\bibitem{ZhouWJZ13}
+\bibauthor{ZHOU Q\@, WANG G\@, JIA K, et~al}\@. \bibtitle{Learning to Share
+  Latent Tasks for Action Recognition}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{{IEEE} International Conference on Computer
+  Vision, {ICCV} 2013, Sydney, Australia, December 1-8, 2013}\@.
+  \bibyear{2013}\thinspace{}\textnormal{:
+  }\bibpages{2264\thinspace{}\textnormal{--}\thinspace{}2271}\@.
+
+\bibitem{KimX10}
+\bibauthor{KIM S\@, XING E~P}\@. \bibtitle{Tree-Guided Group Lasso for
+  Multi-Task Regression with Structured Sparsity}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Proceedings of the 27th International Conference
+  on Machine Learning (ICML-10), June 21-24, 2010, Haifa, Israel}\@.
+  \bibyear{2010}\thinspace{}\textnormal{:
+  }\bibpages{543\thinspace{}\textnormal{--}\thinspace{}550}\@.
+
+\bibitem{Vapnik95}
+\bibauthor{CORTES C\@, VAPNIK V}\@. \bibtitle{Support-Vector
+  Networks}\bibmark{[J]}\@. \bibjournal{Mach. Learn.}\@, \bibyear{1995}\@,
+  \bibvolume{20}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{273\thinspace{}\textnormal{--}\thinspace{}297}\@.
+
+\bibitem{GuyonVBBS91}
+\bibauthor{GUYON I\@, VAPNIK V\@, BOSER B~E, et~al}\@. \bibtitle{Structural
+  Risk Minimization for Character Recognition}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Advances in Neural Information Processing Systems
+  4, {[NIPS} Conference, Denver, Colorado, USA, December 2-5, 1991]}\@.
+  \bibyear{1991}\thinspace{}\textnormal{:
+  }\bibpages{471\thinspace{}\textnormal{--}\thinspace{}479}\@.
+
+\bibitem{frey07affinitypropagation}
+\bibauthor{FREY B~J\@, DUECK D}\@. \bibtitle{Clustering by Passing Messages
+  Between Data Points}\bibmark{[J]}\@. \bibjournal{Science}\@,
+  \bibyear{2007}\@, \bibvolume{315}\thinspace{}\textnormal{:
+  }\bibpages{972\thinspace{}\textnormal{--}\thinspace{}976}\@.
+
+\bibitem{HouZSS14}
+\bibauthor{HOU R\@, ZAMIR A~R\@, SUKTHANKAR R, et~al}\@. \bibtitle{DaMN -
+  Discriminative and Mutually Nearest: Exploiting Pairwise Category Proximity
+  for Video Action Recognition}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Computer Vision - {ECCV} 2014 - 13th European
+  Conference, Zurich, Switzerland, September 6-12, 2014, Proceedings, Part
+  {III}}\@. \bibyear{2014}\thinspace{}\textnormal{:
+  }\bibpages{721\thinspace{}\textnormal{--}\thinspace{}736}\@.
+
+\bibitem{CLK12}
+\bibauthor{CHEN X\@, LIN Q\@, KIM S, et~al}\@. \bibtitle{Smoothing Proximal
+  Gradient Method for General Structured Sparse Learning}\bibmark{[J]}\@.
+  \bibjournal{CoRR}\@, \bibyear{2012}\@, \bibvolume{abs/1202.3708}\@.
+
+\bibitem{KuehneJGPS11}
+\bibauthor{KUEHNE H\@, JHUANG H\@, GARROTE E, et~al}\@. \bibtitle{{HMDB:} {A}
+  large video database for human motion recognition}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{{IEEE} International Conference on Computer
+  Vision, {ICCV} 2011, Barcelona, Spain, November 6-13, 2011}\@.
+  \bibyear{2011}\thinspace{}\textnormal{:
+  }\bibpages{2556\thinspace{}\textnormal{--}\thinspace{}2563}\@.
+
+\bibitem{ReddyS13}
+\bibauthor{K. R~K\@, MUBARAK S}\@. \bibtitle{Recognizing 50 human action
+  categories of web videos.}\bibmark{[J]}\@. \bibjournal{Mach. Vis. Appl.}\@,
+  \bibyear{2013}\@, \bibvolume{24}\bibnumber{(5)}\thinspace{}\textnormal{:
+  }\bibpages{971\thinspace{}\textnormal{--}\thinspace{}981}\@.
+
+\bibitem{SadanandC12}
+\bibauthor{SADANAND S\@, CORSO J~J}\@. \bibtitle{Action bank: {A} high-level
+  representation of activity in video}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{2012 {IEEE} Conference on Computer Vision and
+  Pattern Recognition, Providence, RI, USA, June 16-21, 2012}\@.
+  \bibyear{2012}\thinspace{}\textnormal{:
+  }\bibpages{1234\thinspace{}\textnormal{--}\thinspace{}1241}\@.
+
+\bibitem{WangUKLS09}
+\bibauthor{WANG H\@, ULLAH M~M\@, KL{\"{A}}SER A, et~al}\@.
+  \bibtitle{Evaluation of Local Spatio-temporal Features for Action
+  Recognition}\bibmark{[C]} //\thinspace{}\bibbooktitle{British Machine Vision
+  Conference, {BMVC} 2009, London, UK, September 7-10, 2009. Proceedings}\@.
+  \bibyear{2009}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}11}\@.
+
+\bibitem{JegouC12}
+\bibauthor{J{\'{E}}GOU H\@, CHUM O}\@. \bibtitle{Negative Evidences and
+  Co-occurences in Image Retrieval: The Benefit of {PCA} and
+  Whitening}\bibmark{[C]} //\thinspace{}\bibbooktitle{Computer Vision - {ECCV}
+  2012 - 12th European Conference on Computer Vision, Florence, Italy, October
+  7-13, 2012, Proceedings, Part {II}}\@.
+  \bibyear{2012}\thinspace{}\textnormal{:
+  }\bibpages{774\thinspace{}\textnormal{--}\thinspace{}787}\@.
+
+\bibitem{SimonyanZ14}
+\bibauthor{SIMONYAN K\@, ZISSERMAN A}\@. \bibtitle{Two-Stream Convolutional
+  Networks for Action Recognition in Videos}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Advances in Neural Information Processing Systems
+  27: Annual Conference on Neural Information Processing Systems 2014, December
+  8-13 2014, Montreal, Quebec, Canada}\@.
+  \bibyear{2014}\thinspace{}\textnormal{:
+  }\bibpages{568\thinspace{}\textnormal{--}\thinspace{}576}\@.
+
+\bibitem{YangT14}
+\bibauthor{YANG X\@, TIAN Y}\@. \bibtitle{Action Recognition Using Super Sparse
+  Coding Vector with Spatio-temporal Awareness}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Computer Vision - {ECCV} 2014 - 13th European
+  Conference, Zurich, Switzerland, September 6-12, 2014, Proceedings, Part
+  {II}}\@. \bibyear{2014}\thinspace{}\textnormal{:
+  }\bibpages{727\thinspace{}\textnormal{--}\thinspace{}741}\@.
+
+\bibitem{PerronninSM10}
+\bibauthor{PERRONNIN F\@, S{\'{A}}NCHEZ J\@, MENSINK T}\@. \bibtitle{Improving
+  the Fisher Kernel for Large-Scale Image Classification}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Computer Vision - {ECCV} 2010, 11th European
+  Conference on Computer Vision, Heraklion, Crete, Greece, September 5-11,
+  2010, Proceedings, Part {IV}}\@. \bibyear{2010}\thinspace{}\textnormal{:
+  }\bibpages{143\thinspace{}\textnormal{--}\thinspace{}156}\@.
+
+\bibitem{PerronninD07}
+\bibauthor{PERRONNIN F\@, DANCE C~R}\@. \bibtitle{Fisher Kernels on Visual
+  Vocabularies for Image Categorization}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{2007 {IEEE} Computer Society Conference on
+  Computer Vision and Pattern Recognition {(CVPR} 2007), 18-23 June 2007,
+  Minneapolis, Minnesota, {USA}}\@. \bibyear{2007}\@.
+
+\bibitem{ZhangWC14}
+\bibauthor{ZHANG Y\@, WU J\@, CAI J}\@. \bibtitle{Compact Representation for
+  Image Classification: To Choose or to Compress?}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{2014 {IEEE} Conference on Computer Vision and
+  Pattern Recognition, {CVPR} 2014, Columbus, OH, USA, June 23-28, 2014}\@.
+  \bibyear{2014}\thinspace{}\textnormal{:
+  }\bibpages{907\thinspace{}\textnormal{--}\thinspace{}914}\@.
+
+\bibitem{ArgyriouEP08}
+\bibauthor{ARGYRIOU A\@, EVGENIOU T\@, PONTIL M}\@. \bibtitle{Convex multi-task
+  feature learning}\bibmark{[J]}\@. \bibjournal{Machine Learning}\@,
+  \bibyear{2008}\@, \bibvolume{73}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{243\thinspace{}\textnormal{--}\thinspace{}272}\@.
+
+\bibitem{abs-1205-2631}
+\bibauthor{LIU J\@, JI S\@, YE J}\@. \bibtitle{Multi-Task Feature Learning Via
+  Efficient l2,1-Norm Minimization}\bibmark{[J]}\@. \bibjournal{CoRR}\@,
+  \bibyear{2012}\@, \bibvolume{abs/1205.2631}\@.
+
+\bibitem{Evgeniou}
+\bibauthor{EVGENIOU T\@, PONTIL M}\@. \bibtitle{Regularized Multi--task
+  Learning}\bibmark{[C]} //\thinspace{}\bibbooktitle{KDD
+  '04\thinspace{}\textnormal{: }Proceedings of the Tenth ACM SIGKDD
+  International Conference on Knowledge Discovery and Data Mining}\@.
+  \bibyear{2004}\thinspace{}\textnormal{:
+  }\bibpages{109\thinspace{}\textnormal{--}\thinspace{}117}\@.
+
+\bibitem{LazebnikSP06}
+\bibauthor{LAZEBNIK S\@, SCHMID C\@, PONCE J}\@. \bibtitle{Beyond Bags of
+  Features: Spatial Pyramid Matching for Recognizing Natural Scene
+  Categories}\bibmark{[C]} //\thinspace{}\bibbooktitle{2006 {IEEE} Computer
+  Society Conference on Computer Vision and Pattern Recognition {(CVPR} 2006),
+  17-22 June 2006, New York, NY, {USA}}\@.
+  \bibyear{2006}\thinspace{}\textnormal{:
+  }\bibpages{2169\thinspace{}\textnormal{--}\thinspace{}2178}\@.
+
+\end{thebibliography}

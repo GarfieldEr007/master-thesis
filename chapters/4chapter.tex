@@ -1,0 +1,325 @@
+\chapter{基于类别高斯分布的多任务行为识别}
+\label{4}
+\section{引言}
+
+如本文在第三章中所述，现有的行为识别方法的一般流程都是提取视频特征后再训练分类器。它们之中的绝大多数都独立地对每个任务学习其对应的分类模型，从而浪费和忽视了类别之间共享的信息。基于此，第三章中提出了基于类别边界距离的多任务行为识别，首先对数据库中的所有任务两两训练~1-VS-1~的~SVM，然后用~SVM~ 的几何间隔作为对应的两个类别之间的相似性度量；相似度矩阵进行聚类后可以得到数据库的潜在类别结构；最后将此结构作为先验约束与多任务学习框架结合，从而利用任务之间的相关信息提高分类模型的性能和泛化能力。
+
+本章内容在第三章的基础上，对于任务之间的相似度度量做出了更深层次的探索。既然多任务学习的目的是鼓励相似的任务分享特征，那么如果从特征的角度来衡量任务之间的相似度将更加的直观和合理。本文使用的特征为~Fisher Vector\upcite{CaiWPQ14,PengZQP14,OneataVS13}，它近年来被行为识别方法广泛利用并取得了很好的效果。Fisher Vector~ 由高斯混合模型的最大似然函数分别对于均值和协方差的导数串联而成，也就是说~Fisher Vector~中的连续维度对应着一个特定的高斯分布。此外，我们观察到高斯混合模型中每个高斯分布捕捉和表示了特定的视觉特征和运动特征，从而对于不同行为类别的贡献不同。在这些观察的基础上，我们提出了一个假设：相似的行为类别分享较多的高斯分布，也就是分享~Fisher Vector~中的对应连续维度的特征。基于此，我们提出了基于类别高斯分布的多任务行为识别。首先我们计算出每个高斯分布对于每一个行为类别的互信息衡量其对这个类别的重要性权重，如果这个权重过低，那么这个高斯分布对应的特征也被视为无用的；采用两个类别同时拥有的高斯分布的个数来衡量类别之间的相似度；计算得到相似度矩阵之后，再如第三章所说的，聚类得到类别之间的隐含结构，最后利用基于组结构约束的多任务学习为每个组学习到一个共享的特征空间，具体的流程如图~\ref{p13}~ 所示。
+
+\begin{figure*}
+\begin{center}
+%\fbox{\rule{0pt}{2in} \rule{.9\linewidth}{0pt}}
+\includegraphics[width=1\linewidth]{framework2.eps}
+\end{center}
+   \caption{基于类别高斯分布的多任务行为识别的具体流程}
+\label{p13}
+\end{figure*}
+
+综上所述，本章提出了一种基于类别高斯分布的多任务行为识别方法。本章的主要内容安排如下：在~\ref{42}~节中介绍~Fisher Vector~；在~\ref{43}~节中介绍基于类别高斯分布的多任务行为识别，首先会介绍基于互信息的相似性度量，然后简单介绍目标函数的优化；在~\ref{44}~ 节中进行实验仿真并对实验结果进行分析；在~\ref{45}~节中对本章内容进行总结。
+
+\section{Fisher Vector}
+\label{42}
+BoVW~是计算机视觉领域常用的特征处理方法，它可以将从视频和图像中提取的局部特征转化为全局特征。BoVW~的具体步骤如图~\ref{p1}~所示，分别为（1）特征提取（2）特征预处理（3）生成码本（4）特征编码（5）特征的池化和正规化。研究者们针对这五个步骤中提出了许多有效的算法，而其中最重要的步骤当数码本的生成和特征的编码。如果使用高斯混合模型（Gaussin Mixture Model, GMM）来生成码本和基于~Fisher Vector~的方法对特征进行编码，那么最终得到的特征就称为~Fisher Vector~。Fisher Vector\upcite{PerronninSM10} 起源于~Fisher Kernel~。将原始特征通过~Fisher Kernel~映射到高维的特征空间之后得到的向量即为~Fisher Vector。下面将分别对~Fisher Kernel~ 和~Fisher Vector~做出简单的介绍。
+
+Fisher Kernel\upcite{PerronninD07}是分类问题中常用的模型，它结合了生成模型和判别模型的优点。假定给定了样本~$\mathbf{X}$，它的生成过程可以被建模为一个包含参数~$\lambda$~的概率密度函数~$p$。在我们的应用中，$\mathbf{X}$~为一个视频样本。则~$\mathbf{X}$~ 可以被如下的梯度向量所描述：
+\begin{equation}
+\label{fx}
+G_{\lambda}^{\mathbf{X}} = \nabla_{\lambda}\log p(\mathbf{X} \mid \lambda)
+\end{equation}
+上式中似然函数的梯度表示了参数~$\lambda$~对于~$\mathbf{X}$~生成过程的贡献。这个梯度向量的维度仅仅和~$\lambda$~向量的维度相关。基于上述梯度向量，定义核函数
+\begin{equation}
+\label{f20}
+K(\mathbf{X},\mathbf{Y}) = G_{\lambda} ^ {\mathbf{X}'}F_{\lambda}^{-1}G_{\lambda}^\mathbf{Y}
+\end{equation}
+其中~$F_{\lambda}$~为~$p$~的~Fisher~信息矩阵：
+\begin{equation}
+\label{f21}
+F_{\lambda} = E_{x \sim p}\left< \nabla_{\lambda}\log p(x \mid \lambda) \nabla_{\lambda}\log p(x \mid \lambda)^{'} \right>
+\end{equation}
+其中~$F_{\lambda}$~是对称且正定的矩阵，它的柯勒斯基（Cholesy）分解为~$F_{\lambda} = F_{\lambda}^{'}F_{\lambda}$~，则可得正规化向量：
+\begin{equation}
+\label{f21}
+g_{\lambda}^{X} = L_{\lambda}G_{\lambda}^{X}
+\end{equation}
+公式~\eqref{f20}~可被重写为~$g_{\lambda}^{\mathbf{X}}$~的点乘形式，其中~$g_{\lambda}^{\mathbf{X}}$~即为样本~$\mathbf{X}$~的~Fisher Vector。
+
+假设样本~$\mathbf{X} = \{x_t, t = 1,2,...,T\}$~表示从视频中提取的描述子，其中~$T$~为描述子的个数，而~$\mathbf{X}$~的生成过程可被~$p$~独立描述。$p$~为概率密度函数，它可以有很多的形式，通常选择高斯混合模型对其建模:
+\begin{equation}
+\label{f22}
+p(x) = \sum_{i=1}^N w_i p_i(x)
+\end{equation}
+GMM~中的每一个元素~$p_i$~都是独立的高斯分布，它可以视为~BoVW~码本中的一个单词（word），每个~$p_i$~都捕捉了不同的视觉特征和运动特征，$N$~表示了码本的大小。在下面的文章中，我们统一将码本中的词称为高斯分布。令参数~$\bm{\lambda} = \{w_i,\bm{\mu}_i,\bm{\sum}_i, i = 1,2,...,N\}$~，其中~$w_i, \bm{\mu}_i$~和~$\bm{\sum}_i$~分别表示第~$i$~个高斯分布的权重，均值和协方差均值。假设协方差矩阵~$\bm{\sum}_i$~为对角矩阵，则可以用方差向量的平方~$\bm{\sigma}_i^2$~表示协方差矩阵。可以用最大似然函数估计（Maximum Likelihood Estimation）在一系列样本的基础上训练得到~GMM~~$p(x)$~，通常使用~EM~算法迭代优化求解。
+
+GMM~和~K-means~算法一样，是~BoVW~中生成码本的一种方法。GMM~与~K-means~方法的不同之处在于，后者是一种硬聚类方法，即它必须将特征描述子划分给码本中确切的一个词，但是前者可以通过~EM~算法给出描述子属于码本中每个词的可能性，所以~GMM~是一种软聚类方法。与~K-means~算法相比，它不仅更加的灵活，而且还描述了码本中词的信息和码本分布情况。
+
+已知~Fisher Vector~由公式~\eqref{fx}~的似然函数的梯度向量对于参数~$\lambda$~的导数串联而成。将~GMM~带入公式~\eqref{fx}~可得
+\begin{equation}
+\label{f23}
+\begin{split}
+&\bm{\rho}_i = \frac{1}{\sqrt{\pi_i}}\gamma_i \left(\frac{\bf{x}-\bm{\mu}_i}{\bm{\sigma}_i} \right) \\
+\bm{\tau}_i &= \frac{1}{\sqrt{2\pi_i}}\gamma_i\left[ \frac{(\bf{x}-\bm{\mu}_i)^2}{\bm{\sigma_i^2}} - 1\right]
+\end{split}
+\end{equation}
+其中~$\gamma_{k} = p(k \mid x_t)$~表示局部描述子属于第~$k$~个高斯分布的权重：
+\begin{equation}
+\label{f24}
+\gamma_k = \frac{\pi_k \mathcal{N}(x;\bm{\mu}_k,\bm{\sigma}_k)} {\sum_{i=1}^{K} \pi_i \mathcal{N}(x; \bm{\mu}_i,\bm{\sigma}_i)}
+\end{equation}
+
+在公式~\eqref{f23}~中~$\bm{\rho}_i$~和~$\bm{\tau}_i$~表示第~$i$~个高斯分布分别对于均值~$\bm{\mu}_i$~和协方差矩阵~$\bm{\sigma}_i^2$~ 的导数。这两个向量的维数和描述子的维数相同。将它们串联起来可得
+\begin{equation}
+\label{f25}
+\mathbf{g}_{\lambda}^{\mathbf{X}}=[\bm{\rho}_1,\bm{\tau}_1,...,\bm{\rho}_N,\bm{\tau}_N]
+\end{equation}
+$\mathbf{g}_{\lambda}^{\mathbf{X}}$~这个~$2ND$~维度的向量即为描述~$\mathbf{X}$~的~Fisher Vector。
+
+Fisher Vector~与基于~K-means~算法的传统~BoVW~相比，它的优势在于：（1）Fisher Vector~包含了特征的~1~阶期望信息和~2~阶方差信息，所以~Fisher Vector~是一个高维特征向量。而由传统~BoVW~得到的特征向量只包含了~0~阶的关键词数量信息，是一个极其稀疏的向量。（2）由于~Fisher Vector~ 保留了码本中每个词更丰富的信息，所以码本的大小也比传统的词袋方法要小。
+
+\section{基于类别高斯分布的多任务行为识别}
+\label{43}
+在上一小节中，我们介绍了~Fisher Vector~，知道了它事实上由~GMM~的最大似然函数分别对于均值和协方差的导数串联而成，如图~\ref{p13}~所示~Fisher Vector~中的连续维度特征对应着一个特定的高斯分布。基于每个高斯分布捕捉了视频的不同特征和相似的视频类别之间共享相同特征这两个假设，我们提出了基于类别高斯分布的多任务行为识别，首先利用互信息来衡量行为类别之间的相似度并探索了数据库中潜藏类别结构信息，最后将此结构信息作为多任务学习的先验正则项来识别行为。
+
+\subsection{基于互信息的相似性度量}
+\label{431}
+本小节主要描述了一种基于互信息的衡量行为类别之间相似度的方法。首先将视频表示为~Fisher Vector，计算每个高斯分布对于每个行为类别的互信息作为其对于此类别的权重，权重越大说明该高斯分布对应的~Fisher Vector~对于该行为类别就越重要，而权重小的高斯分布对应的特征应该在多任务学习之后被抛弃。两个类别共同保留的高斯分布的个数用于衡量它们的相似度。
+
+
+假设给定数据库中共有~$C$~个行为类别，对于第~$c$~个类，对应的训练数据为~$\{\mathbf{x}_{c,i},y_{c,i}\}_{i=1}^{N_c} \subset \mathbb{R}^{D \times 1}(c = 1,..,C)$，$i$~和~$N_c$~分别表示第~$c$~个行为类别中训练样本的序号和个数。通过将~$K$~个高斯分布对应的梯度向量串联可将一个样本表示为~$\{\mathbf{x}_{c,i}^{k}\}_{k=1}^K$，其中~$k$~表示高斯混合模型中高斯分布的序号，$\mathbf{x}_{c,i}^k$~为第~$k$~个高斯分布对应的特征向量。
+
+互信息（Mutual Information, MI）是概率论和信息论中常用的一个量度，它一般用来衡量变量间相互依赖的程度。互信息可被用于衡量某维特征与特定类别的相关性，从而实现特征选择。如果信息量越大，那么特征和这个类别的相关性越大，反之也是成立的。基于此理论基础，为了探求高斯分布与行为类别之间的关系，我们提出了利用互信息来衡量一个高斯分布对于一个行为类别的重要性。具体来说，令~$I_{c,k}(\mathbf{x}_{:}^k,\mathbf{y})$~表示第~$c$~ 个行为类别和第~$k$~ 个高斯分布之间的互信息，其中~$\mathbf{x}_{:}^k = \{\{\mathbf{x}_{c,i}^k\}_{i=1}^{N_c}\}_{c=1}^C$~为将数据库的所有视频表示为~Fisher Vector~ 之后，第~$k$~个高斯分布对应的特征维度组成的矩阵，其中下标~$:$~表示了它包含来自所有样本的特征。$\mathbf{y}$~表示类标空间，互信息的值可由如下公式计算：
+\begin{equation}
+\label{f25}
+I_{c,k}(\mathbf{x}_{:}^k,\mathbf{y}) = H(\mathbf{y}) + H(\mathbf{x}_{:}^k) - H(\mathbf{x}_{:}^k,\mathbf{y})
+\end{equation}
+上式中~$H$~表示一个随机变量的熵，是随机变量不确定性的度量。$y$~的值随类别标签~$c$~的值变化而变化。当计算~$I_{c,k}$~时，所有属于第~$c$~个类别的视频样本都被视为正样本，则对应的~$y$~值为~$1$，而其他不属于第~$c$~个类别的所有样本都视为负样本，$y$~的值为~$-1$。 这个步骤的处理不仅仅方便了互信息的计算，而且和最终对每个类别训练二元线性分类器的过程一致。在最终的多任务学习模型中，用相同的方式处理类标。
+
+如果是设~$X$~是一个取有限个值的离散随机变量，其概率分布为
+\begin{equation}
+\label{f26}
+ P(X=x_i) = p_i,~i = 1,2,..,n
+\end{equation}
+
+则随机变量~$X$~的熵~$H$~通常被如下的公式所计算：
+\begin{equation}
+\label{f27}
+ H(X) = - \sum_i P(x_i)\log_bP(x_i)
+\end{equation}
+\begin{figure}[t]
+\begin{center}
+%\fbox{\rule{0pt}{2in} \rule{0.9\linewidth}{0pt}}
+   \includegraphics[width=0.6\linewidth]{12.eps}
+\end{center}
+   \caption{Fisher Vector~中同属于一个高斯分布的特征值直方图}
+\label{p14}
+\end{figure}
+上式中~$b$~表示对数的基数。$H$~只依赖于~$X$~的分布，而与~$X$~的取值无关。在我们的工作中~$X$~为~Fisher Vector。如果要通过计算概率分布函数来求解~$H(\mathbf{x}_{:}^k)$~将会耗费大量的时间和精力，所以我们采取了文献~\citep{ZhangWC14}~的方法，利用了频率来代替概率函数。具体的，我们如公式~\eqref{f28}~所示将~Fisher Vector~的中的值量化为若干个组，为了计算简单，在我们的实验中我们将组的个数设置为了~2。 其他的量化方法也是可行的，通过实验我们发现组的个数对实验结果并没有太大的影响。在将视频表示为~Fisher Vector~ 之后，通过统计每个高斯分布对应的~Fisher Vector~特征值的分布规律，可知~$0$~必须被设为划分组的阈值，具体分布如图~\ref{p14} 所示。
+\begin{equation}
+\label{f28}
+x = \left\{\begin{matrix}
+0 & x < 0\\
+1& otherwise
+\end{matrix}\right.
+\end{equation}
+对~Fisher Vector~做了量化处理之后，则公式~\eqref{f25}~中的离散熵可以被如下公式所计算：
+\begin{equation}
+\label{f29}
+H(\mathbf{x}_{:}^k) = -\sum_{j=1}^{2}p_j\log_2(p_j)
+\end{equation}
+上式中~$p_j$~表示的是矩阵~$\mathbf{x}_{:}^k$~中的每一项落入第~$j$~个组的频率。所有的~$p_j$~可以通过统计~Fisher Vector~特征值分布得到。
+
+在文献~\citep{ZhangWC14}~的工作中，Yu Zhang~等人提出了基于互信息的排序方法，并将其应用于特征选择和特征降维。尽管都用到了互信息，我们的工作在细节和规划上却有很大的变化。前者仅仅计算了每一单独维度的特征和图像类别之间的互信息，而忽略了每维特征对于不同类别的重要程度不同的事实。我们计算的是一个高斯分布对应的连续维度的特征对于行为类别的互信息， 从而衡量此高斯分布对于类别的重要性。我们的方法不仅仅可以为每一个行为类别挑选出最具有判别性的特征从而训练出可信赖的二元线性分类器，而且可以通过量化类别持有的高斯分布的个数来衡量类别之间的相似性。从而探索数据库潜藏类别结构信息。此外，Yu Zhang~将互信息低的特征维度直接抛弃实现特征的选择和降维，而我们利用了多任务学习方法和组结构约束来实现特征选择。
+
+当我们为所有的高斯分布分别计算出它们对于每个行为类别的互信息~$I_{c,k}$~之后，我们用此来衡量高斯分布对于行为类别的重要程度，$I_{c,k}$~ 越大，说明该高斯分布对应的~Fisher Vector~特征维度对于该行为类别越重要。为了衡量行为类别之间的相似性，我们利用阈值~$\lambda$~将正规化之后的互信息矩阵~$\mathbf{I}$~转化为一个值为~0~或者~1~的二元矩阵，具体公式如下所示：
+\begin{equation}
+\label{f30}
+I_{i,j} = \left\{\begin{matrix}
+0 & I_{i,j} < \lambda\\
+1& otherwise
+\end{matrix}\right.
+\end{equation}
+上式表明了对于行为类别不重要的特征应该抛弃，重要的应该保留。所以利用阈值~$\lambda$~来量化互信息矩阵~$\mathbf{I}$。$I_{i,j}$~如果大于~$\lambda$~则令其为~$1$~，说明对于第~$i$~个行为类别，第~$j$~个高斯分布对应的~Fisher Vector~很重要，故予以保留，反之抛弃。如果行为类别同时保留的高斯分布的个数越多，则说明它们之间的相似度越高。
+
+将互信息矩阵~$\mathbf{I}$~转化为二元矩阵之后，就可以基于它来计算相似度矩阵~$\mathbf{S} \subset\mathbb{R}^{C \times C}$~，我们用~$s_{i,j}$~ 来表示第~$i$~个类别和第~$j$~个类别之间的相似度，它可由如下的公式计算：
+\begin{equation}
+\label{f31}
+ s_{i,j}  = \sum(\mathbf{I}_{i} \odot \mathbf{I}_{j})
+\end{equation}
+上式中~$\odot$~表示按位与，即将第~$i$~个类别与第~$j$~个类别的高斯权重行向量按位与之后再求和，所得的值正是两个类别同时选择的高斯分布的个数，也就是它们之间的相似度~$s_{i,j}$。通过计算互信息矩阵~$\mathbf{I}$~中的每两行之间按位与之和后，可以得到一个对称的相似性矩阵~$\mathbf{S}$。
+
+可以发现此相似性度量方法是直接从特征的角度出发，所以它得到的类别之间的相似性关系也是基于特征的。具体而言，相似度矩阵~$\mathbf{S}$~和互信息矩阵~$\mathbf{I}$~都是基于通过估计特征~$\mathbf{x}$~的概率分布函数得到的。所以如果使用不同的特征描述子，由于它们表示了不同的特征空间和分布，从而可能使得类别之间的相似结构也是不同的。这也是基于互信息相似性度量方法的灵活性所在。
+\subsection{基于类别高斯分布的多任务行为识别}
+基于类别高斯分布的多任务行为识别方法的具体流程如图~\ref{p13}~所示。我们首先将视频表示为~Fisher Vector~；然后利用~\ref{431}~小节中的方法通过计算高斯分布对于行为类别的互信息得到类别之间的相似度矩阵~$\mathbf{S}$；和第三章的方法类似，最后通过反向传播算子聚类法得到基于训练特征的最优任务结构之后，利用基于组结构约束的多任务学习框架得到分类模型。
+
+具体的目标函数如公式~\eqref{fgroup}~所示。与基于类别边界距离的多任务行为识别的区别在于在本方法中先验结构约束的计算方法是不同的。基于~SVM~间隔的多任务行为识别利用行为之间的~SVM~几何间隔来衡量行为之间的相似度，而本方法通过计算高斯分布对于行为类别的互信息得到类别之间的相似度矩阵~$\mathbf{S}$。
+
+优化求解公式~\eqref{fgroup}~之后，对于新的测试视频，将它表示为~Fisher Vector~~$\mathbf{x}_n \in \mathbb{R}^D$~之后，它对应的标签~$y_n$~ 可由公式~\eqref{fpredict}~求得。
+
+\section{实验结果与分析}
+\label{44}
+本小节先介绍了实验的具体细节，包括数据库、特征、基准方法和参数。然后展示了基于类别高斯分布的多任务行为识别和对比方法分别在行为识别数据库~HMDB51~和~UCF50~上的结果，并给出了结果的分析。
+\subsection{实验设计}
+
+本方法的实验步骤与基于类别边界距离的多任务行为识别方法的实验步骤相同，所以在此不再对特征、基准方法和参数选择上再做赘述，具体可以参照~\ref{331}~小节，下面只简单的对数据库做介绍。
+
+HMDB51~和~UCF50~数据库在第\ref{3}章中已做了介绍，除了基本的实验之外，为了展示多任务学习的优点，我们在~HMDB51~数据库中随机选择了~$10\%$~，$20\%$~，$30\%$~， $40\%$~，$50\%$~，$60\%$~，$70\%$~，$80\%$~，$90\%$~的训练数据进行了实验，如上所述，每次设置下都将实验重复了十次。
+
+\subsection{实验结果与分析}
+
+
+首先如表~\ref{b3}~所示，我们比较了基于类别高斯分布的多任务行为识别与三个基准方法的识别精度。从表中的结果可以看出，基于类别高斯分布的多任务行为识别不管是利用哪个类型的描述子，与基准方法相比识别精度都是最高的。我们的多任务学习框架利用了组结构约束，它综合了~$\ell_{1}$~范数和~$\ell_{2,1}$~范数的优点。当所有的行为类别都属于同一个组的时候，也就是所有的类别都相似的情况下，公式~\eqref{fgroup}~中的结构正则项退化为~$\ell_{2,1}$~范数。当所有的行为类别都自成一组时，也就是所有的类别之间都不共享特征的情况下，结构正则项退化为~$\ell_{1}$~范数。
+
+\zihao{5}
+\begin{table}
+\begin{center}
+\caption{基于类别高斯分布的多任务行为识别与基准方法在~HMDB51~上的实验结果对比}
+\label{b3}
+\begin{tabular}{|p{1.9cm}<{\centering}|p{2.8cm}<{\centering}|p{2.8cm}<{\centering}|p{2.8cm}<{\centering}|p{2.8cm}<{\centering}|}
+\hline
+特征/方法 & \tabincell{c}{多任务行为识别}& \tabincell{c}{基于~$\ell_1$~范数的 \\ 多任务行为识别} &\tabincell{c}{基于~$\ell_{21}$~范数的 \\ 多任务行为识别}  & \tabincell{c}{本章算法} \\
+\hline
+HOG & 40.22 & 42.05 & 41.84 & \textbf{44.02} \\
+\hline
+HOF & 49.00 & 50.04 & 50.09 & \textbf{50.62} \\
+\hline
+MBHx & 40.24 & 41.81 & 41.61 & \textbf{42.04} \\
+\hline
+MBHy & 47.13 & 47.62 & 47.02 &  \textbf{48.37} \\
+\hline
+combined & 60.15 & 60.38 & 60.31 & \textbf{60.84} \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\zihao{-4}\setlength{\baselineskip}{20pt}
+
+\zihao{5}
+\begin{table*}
+\begin{center}
+\caption{基于类别高斯分布的多任务行为识别和单任务学习在训练样本变化时在~HMDB51~数据库的实验结果对比，该实验中用的特征为四种描述子的串联向量}
+\label{b4}
+\begin{tabular}{|p{1.7cm}<{\centering}|p{2.25cm}<{\centering}|p{2.25cm}<{\centering}|p{2.25cm}<{\centering}|p{2.25cm}<{\centering}|p{2.25cm}<{\centering}|}
+\hline
+训练数据& 10$\%$ & 20$\%$ & 30$\%$ & 40$\%$ & 50$\%$ \\
+\hline
+单任务&36.17 $\pm$ 1.79& 45.45 $\pm$ 1.30&50.39 $\pm$ 1.15 &53.17 $\pm$ 0.88 &54.72 $\pm$ 0.71\\
+多任务&40.03 $\pm$ 2.11 &48.10 $\pm$ 1.75&52.39 $\pm$ 1.43 &55.03 $\pm$ 1.12&56.53 $\pm$ 0.94\\
+\hline\hline
+训练数据& 60$\%$ & 70$\%$ & 80$\%$ & 90$\%$ &100$\%$ \\
+\hline
+单任务&56.45 $\pm$ 0.73&57.68 $\pm$ 0.53& 58.61 $\pm$ 0.65 & 59.54 $\pm$ 0.40 &60.22\\
+多任务&57.20 $\pm$ 0.88 & 59.15 $\pm$ 0.81& 59.48$\pm$ 0.73&60.14 $\pm$ 0.52 &60.84\\
+\hline
+\end{tabular}
+\end{center}
+\end{table*}
+\zihao{-4}\setlength{\baselineskip}{20pt}
+
+基于类别高斯分布的多任务行为识别和单任务学习在训练样本数目变化时的实验结果如表~\ref{b4}~所示。很明显，当训练数据较少的时候多任务学习与单任务学习相比得到了很大的提升。这个提升是由于多任务学习的特征共享机制导致的。这个结果也说明了我们关于数据库中的行为可以分为若干组，每个组内的任务共享相同的特征空间这个假设的正确性。
+
+
+最后我们把基于类别高斯分布的多任务行为识别和行为识别领域一些先进的方法在~HMDB51~数据库上做了对比试验。如表~\ref{b5}~所示，基于类别高斯分布的多任务行为识别甚至比基于深度学习的方法~\upcite{SimonyanZ14}~效果还要好。
+\zihao{5}
+\begin{table*}
+\begin{center}
+\caption{基于类别高斯分布的多任务行为识别方法与~state-of-the-art~方法在~HMDB51~上的实验结果对比}
+\label{b5}
+\begin{tabular}{|p{7cm}<{\centering}|p{3cm}<{\centering}|}
+\hline
+方法& 精度 \\
+\hline
+Sadanand and J.Corso~\upcite{SadanandC12} & $26.9 \%$ \\
+\hline
+Yang et al.~\upcite{YangT14} & $53.9 \%$\\
+\hline
+Hou et al.~\upcite{HouZSS14} & $57.88 \%$ \\
+\hline
+K. Simonyan and A. Zisserman~\upcite{SimonyanZ14} & $59.5 \%$ \\
+\hline
+本章算法  & $\textbf{60.84} \%$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{table*}
+\zihao{-4}\setlength{\baselineskip}{20pt}
+
+\begin{figure}
+  \centering
+  \subfigure[ ]{
+    \label{p15} %% label for first subfigure
+    \includegraphics[width=2.4in]{smatrix.eps}}
+  \hspace{1in}
+  \subfigure[ ]{
+    \label{p16} %% label for second subfigure
+    \includegraphics[width=2.4in]{cmatrix.eps}}
+  \caption{\textbf{(a)}~在~UCF50~数据库上，基于~HOG~特征训练计算得到的互信息矩阵~$\mathbf{I}$~的一部分。行和列分别表示了行为类别和高斯分布。矩阵~$\mathbf{I}$~中颜色的深浅代表了对应高斯分布对于行为类别的重要程度 \textbf{(b)}~通过~$\mathbf{I}$~ 计算得到的相似度矩阵~$\mathbf{S}$。 白色表示~0}
+  \label{fig:subfig} %% label for entire figure
+\end{figure}
+
+然后我们在~UCF50~上进行了实验对比。如图~\ref{p15}~所示，我们展示了一部分在~UCF50~数据库上，基于~HOG~特征训练计算得到的互信息矩阵~$\mathbf{I}$~和它对应的相似度矩阵~$\mathbf{S}$。在相似性矩阵~$\mathbf{I}$~中，行代表了行为类别，列代表了高斯分布。$I_{i,j}$~的深浅表示了对于第~$i$~个行为类别而言，第~$j$~个高斯分布的重要程度。通过对~$\mathbf{I}$~进行公式~\eqref{f30}~的处理得到矩阵~$\mathbf{S}$，若$s_{i,j}$~是白色的，则表示对于第~$i$~个类而言，第~$j$~个高斯分布对应的特征维度不太重要，所以抛弃它。从图~\ref{p16}~中很容易可以观察到，同属于一组的行为类别更容易同时和一个高斯分布具有更密切的关系。当然也存在一些异常任务，这说明了组结构约束只是一个软约束，它非常的灵活。
+\zihao{5}
+\begin{table}
+\begin{center}
+\caption{基于类别高斯分布的多任务行为识别与基准方法在UCF50上的实验结果对比}
+\label{b6}
+\begin{tabular}{|p{1.9cm}<{\centering}|p{2.8cm}<{\centering}|p{2.8cm}<{\centering}|p{2.8cm}<{\centering}|p{2.8cm}<{\centering}|}
+\hline
+特征/方法 & \tabincell{c}{多任务行为识别}& \tabincell{c}{基于~$\ell_1$~范数的 \\ 多任务行为识别} &\tabincell{c}{基于~$\ell_{2,1}$~范数的 \\ 多任务行为识别}  & \tabincell{c}{本章算法} \\
+\hline
+HOG&82.37&82.76&82.98&\textbf{84.04}\\
+\hline
+HOF&85.69&86.57&86.89&\textbf{87.98}\\
+\hline
+MBHx&83.18&83.74&83.53&\textbf{84.54}\\
+\hline
+MBHy&84.07&85.08&85.32&\textbf{86.28}\\
+\hline
+combined&87.83&88.39&88.54&\textbf{89.17 }\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\zihao{-4}\setlength{\baselineskip}{20pt}
+
+\begin{figure*}
+\begin{center}
+%\fbox{\rule{0pt}{2in} \rule{.9\linewidth}{0pt}}
+\includegraphics[width=1\linewidth]{ucf501.eps}
+\end{center}
+\caption{当仅使用~25$\%$~的训练数据时，基于类别高斯分布的多任务行为识别方法在~UCF50~行为数据库中的绝大多数类别上的识别精度的提升}
+\label{p17}
+\end{figure*}
+
+\zihao{5}
+\begin{table*}
+\begin{center}
+\caption{基于类别高斯分布的多任务行为识别与~state-of-the-art~方法在~UCF50~上的实验结果对比}
+\label{b7}
+\begin{tabular}{|c|c|}
+\hline
+Methods & Accuracy\\
+\hline
+Sadanand and J.Corso\upcite{SadanandC12} & 57.9 $\%$ \\
+\hline
+Kishore K. Reddy and Mubarak Shah\upcite{ReddyS13} & 76.9$\%$\\
+\hline
+Zhou et al.\upcite{ZhouWJZ13}& 78.3$\%$\\
+\hline
+Wang et al.\upcite{Wang2013} & 85.9$\%$\\
+\hline
+本章算法 & \textbf{89.2}$\%$\\
+\hline
+\end{tabular}
+\end{center}
+\end{table*}
+\zihao{-4}\setlength{\baselineskip}{20pt}
+如表~\ref{b6}~所示，我们在数据库~UCF50~上比较了基于类别高斯分布的多任务行为识别与三个基准方法的识别精度。从表中的结果可以看出，基于类别高斯分布的多任务行为识别不管是利用哪个类型的描述子，与基准方法相比识别精度都是最高的。这个结果和我们在HMDB51上的结果一致，原因也是如上文中分析的：我们的多任务学习框架利用了组结构约束，它综合了~$\ell_{1}$~范数和~$\ell_{2,1}$~范数的优点。图~\ref{p17}~ 展示了当仅使用~25$\%$~的训练数据时，基于类别高斯分布的多任务行为识别方法在~UCF50~行为数据库中的绝大多数类别上的识别精度的提升。值得注意的是，同属于一组的行为类别普遍获得了显著的提升，这都归功于多任务学习框架利用了原本被忽略了类别之间的信息。
+
+在表~\ref{b7}~中，我们把基于类别高斯分布的多任务行为识别和行为识别领域一些~state-of-the-art~方法在~UCF50~数据库上进行了对比试验。
+
+
+\section{本章小结}
+\label{45}
+我们在第三章中提出的基于类别边界距离的多任务学习方法通过利用~SVM~几何间隔计算行为类别的相似性矩阵，然后聚类得到数据库的潜在类别结构。在此基础上，本文通过观察常用特征~Fisher Vector，得到了以下假设：（1）Fisher Vector~ 中的连续特征维度对应着特定的高斯分布，不同的高斯分布捕捉了视频中特定的视觉和运动特征，所以高斯分布对于行为类别的重要程度是不同的。（2）数据库中的行为可以分为若干组，每个组内的任务共享相同的特征空间，即会共享更多的来自于同一个高斯分布的特征。基于这两个假设，本文在基于~SVM~的多任务行为识别方法的基础上提出了基于类别高斯分布的多任务行为识别，它计算出每个高斯分布对于每一个行为类别的互信息来衡量其对这个类别的重要性。它可以鼓励同属于一组的任务共享了来自于一个高斯分布的特征，它直接从特征的角度计算行为类别的相似性，与基于类别边界距离的多任务行为识别相比更加的直观，计算也更加的简单。在数据库~HMDB51~和数据库~UCF50~上的实验实验结果都表明基于类别高斯分布的多任务行为识别较之其它行为识别方法的优越性。
+
+
+

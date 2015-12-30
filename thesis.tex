@@ -1,0 +1,51 @@
+
+\documentclass[refcompress,eversion,noinfo]{XDUthesis}
+\usepackage{times}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{diagbox}
+\usepackage{slashbox}
+\usepackage{epsfig}
+\usepackage{array}
+\usepackage{bm}
+\usepackage{amsfonts}
+%\usepackage[superscript]{cite}
+\usepackage[numbers,sort&compress]{natbib}
+
+\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
+\renewcommand{\arraystretch}{1.5}
+
+
+
+
+\makeatletter
+\let\c@lofdepth\relax
+\let\c@lotdepth\relax
+\makeatother
+\usepackage{subfigure}
+\graphicspath{figures/}
+
+\newcounter{Exe}[subsection]
+\renewcommand{\theExe}{\arabic{Exe}}
+\newcommand{\Exe}{ \par{£¨ }\refstepcounter{Exe}
+            \theExe £©}
+
+\newcounter{Txt}[section]
+\renewcommand{\theTxt}{\arabic{Txt}}
+\newcommand{\Txt}{ \par{£¨ }\refstepcounter{Txt}
+            \theTxt £©}
+\begin{document}
+\XDUfrontmatter
+\include{chapters/abstract}
+\XDUmainmatter
+\include{chapters/1chapter}
+\include{chapters/2chapter}
+\include{chapters/3chapter}
+\include{chapters/4chapter}
+\include{chapters/5chapter}
+%
+\XDUbackmatter{\bibliography{bib/tex}\nocite{*}}
+\include{chapters/thanks}
+\include{chapters/resume}
+\end{document}

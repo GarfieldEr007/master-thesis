@@ -1,0 +1,617 @@
+@inproceedings{CaiWPQ14,
+  author    = {Zhuowei Cai and Limin Wang and Xiaojiang Peng
+               Yu Qiao},
+  title     = {Multi-View Super Vector for Action Recognition},
+  booktitle = {CVPR},
+  year      = {2014},
+}
+
+@inproceedings{PengZQP14,
+  author    = {Xiaojiang Peng and
+               Changqing Zou and
+               Yu Qiao and
+               Qiang Peng},
+  title     = {Action Recognition with Stacked Fisher Vectors},
+  booktitle = {ECCV},
+  year      = {2014},
+
+}
+
+@inproceedings{DBLP:conf/pcm/LiuYD15,
+  author    = {Ruishan Liu and
+               Yanhua Yang and
+               Cheng Deng},
+  title     = {Recognizing Human Actions by Sharing Knowledge in Implicit Action
+               Groups},
+  booktitle = {Advances in Multimedia Information Processing - {PCM} 2015 - 16th
+               Pacific-Rim Conference on Multimedia, Gwangju, South Korea, September
+               16-18, 2015, Proceedings, Part {I}},
+  pages     = {644--652},
+  year      = {2015},
+}
+
+@article{GorelickBSIB07,
+  author    = {Lena Gorelick and
+               Moshe Blank and
+               Eli Shechtman and
+               Michal Irani and
+               Ronen Basri},
+  title     = {Actions as Space-Time Shapes},
+  journal   = {{IEEE} Trans. Pattern Anal. Mach. Intell.},
+  volume    = {29},
+  number    = {12},
+  pages     = {2247--2253},
+  year      = {2007},
+}
+
+@inproceedings{OneataVS13,
+  author    = {Dan Oneata and
+               Jakob J. Verbeek and
+               Cordelia Schmid},
+  title     = {Action and Event Recognition with Fisher Vectors on a Compact Feature Set},
+  booktitle = {ICCV},
+  year      = {2013},
+}
+
+@inproceedings{LawrenceP04,
+  author    = {Neil D. Lawrence and
+               John C. Platt},
+  title     = {Learning to learn with the informative vector machine},
+  booktitle = {ICML},
+  year      = {2004},
+}
+
+@article{BakkerH03,
+  author    = {Bart Bakker and
+               Tom Heskes},
+  title     = {Task Clustering and Gating for Bayesian Multitask Learning},
+  journal   = {Journal of Machine Learning Research},
+  volume    = {4},
+  pages     = {83--99},
+  year      = {2003},
+}
+
+@article{ArgyriouEP08,
+  author    = {Andreas Argyriou and
+               Theodoros Evgeniou and
+               Massimiliano Pontil},
+  title     = {Convex multi-task feature learning},
+  journal   = {Machine Learning},
+  volume    = {73},
+  number    = {3},
+  pages     = {243--272},
+  year      = {2008},
+}
+
+@article{abs-1205-2631,
+  author    = {Jun Liu and
+               Shuiwang Ji and
+               Jieping Ye},
+  title     = {Multi-Task Feature Learning Via Efficient l2,1-Norm Minimization},
+  journal   = {CoRR},
+  volume    = {abs/1205.2631},
+  year      = {2012},
+}
+
+@inproceedings{EvgeniouP04,
+  author    = {Theodoros Evgeniou and
+               Massimiliano Pontil},
+  title     = {Regularized multi--task learning},
+  booktitle = {SIGKDD},
+  pages     = {109--117},
+  year      = {2004},
+}
+
+@inproceedings{GongYZ12,
+  author    = {Pinghua Gong and
+               Jieping Ye and
+               Changshui Zhang},
+  title     = {Robust multi-task feature learning},
+  booktitle = {SIGKDD},
+  pages     = {895--903},
+  year      = {2012},
+}
+@inproceedings{KangGS11,
+  author    = {Zhuoliang Kang and
+               Kristen Grauman and
+               Fei Sha},
+  title     = {Learning with Whom to Share in Multi-task Feature Learning},
+  booktitle = {ICML},
+  pages     = {521--528},
+  year      = {2011},
+}
+
+@inproceedings{JacobBV08,
+  author    = {Laurent Jacob and
+               Francis R. Bach and
+               Jean{-}Philippe Vert},
+  title     = {Clustered Multi-Task Learning: {A} Convex Formulation},
+  booktitle = {Advances in Neural Information Processing Systems 21, Proceedings
+               of the Twenty-Second Annual Conference on Neural Information Processing
+               Systems, Vancouver, British Columbia, Canada, December 8-11, 2008},
+  pages     = {745--752},
+  year      = {2008},
+}
+
+@inproceedings{KumarD12,
+  author    = {Abhishek Kumar and
+               Hal Daum{\'{e}} III},
+  title     = {Learning Task Grouping and Overlap in Multi-task Learning},
+  booktitle = {ICML},
+  year      = {2012},
+}
+
+@inproceedings{JayaramanSG14,
+  author    = {Dinesh Jayaraman and
+               Fei Sha and
+               Kristen Grauman},
+  title     = {Decorrelating Semantic Visual Attributes by Resisting the Urge to
+               Share},
+  booktitle = {CVPR},
+  pages     = {1629--1636},
+  year      = {2014},
+}
+
+@inproceedings{HouZSS14,
+  author    = {Rui Hou and
+               Amir Roshan Zamir and
+               Rahul Sukthankar and
+               Mubarak Shah},
+  title     = {DaMN - Discriminative and Mutually Nearest: Exploiting Pairwise Category
+               Proximity for Video Action Recognition},
+  booktitle = {ECCV},
+  year      = {2014},
+}
+
+@InProceedings{Kuehne11,
+   author= "Kuehne, H. and Jhuang, H. and Garrote, E. and Poggio, T. and Serre, T.",
+   title = "{HMDB}: a large video database for human motion recognition",
+   booktitle = {ICCV},
+   year = "2011",
+}
+
+@inproceedings{WangUKLS09,
+  author = {Wang, Heng and Ullah, Muhammad Muneeb and Kl?ser, Alexander and Laptev, Ivan and Schmid, Cordelia},
+ title = {Evaluation of Local Spatio-temporal Features for Action Recognition.},
+  booktitle = {BMVC},
+  year = 2009
+}
+
+@inproceedings{SimonyanZ14,
+  author    = {Karen Simonyan and
+               Andrew Zisserman},
+  title     = {Two-Stream Convolutional Networks for Action Recognition in Videos},
+  booktitle = {NIPS},
+  year      = {2014},
+
+}
+
+@inproceedings{ZhangWC14,
+  author    = {Yu Zhang and
+               Jianxin Wu and
+               Jianfei Cai},
+  title     = {Compact Representation for Image Classification: To Choose or to Compress?},
+  booktitle = {CVPR},
+  year      = {2014},
+
+}
+
+@article{ReddyS13,
+  author = {Reddy. Kishore K. and Shah. Mubarak},
+  title = {Recognizing 50 human action categories of web videos.},
+  journal = {Mach. Vis. Appl.},
+  volume = 24,
+  number = 5,
+  pages = {971-981},
+  year = 2013
+}
+
+@inproceedings{ZhouWJZ13,
+  author    = {Qiang Zhou and
+               Gang Wang and
+               Kui Jia and
+               Qi Zhao},
+  title     = {Learning to Share Latent Tasks for Action Recognition},
+  booktitle = {ICCV},
+  year      = {2013},
+
+}
+
+@article{AggarwalR11,
+  author = {Aggarwal, J. K. and Ryoo, M. S.},
+  title = {Human activity analysis: A review},
+  journal = {ACM Comput. Surv},
+  volume = 43,
+  number = 3,
+  pages = 16,
+  year = 2011
+}
+
+
+@article{KeHLHYC13,
+  author = {Ke, Shian-Ru and Hoang, Le Uyen Thuc and Lee, Yong-Jin and Hwang,   Jenq-Neng and Yoo, Jang-Hee and Choi, Kyoung-Ho},
+  title = {A Review on Video-Based Human Activity Recognition},
+  journal = {Computers},
+  volume = 2,
+  number = 2,
+  pages = {88-131},
+  year = 2013
+}
+
+@article{Collins00asystem,
+    author = {Robert T. Collins and Alan J. Lipton and Takeo Kanade and Hironobu Fujiyoshi and David Duggins and Yanghai Tsin and David Tolliver and Nobuyoshi Enomoto and Osamu Hasegawa and Peter Burt and Lambert Wixson},
+    title = {A System for Video Surveillance and Monitoring},
+    year = {2000}
+}
+
+@inproceedings{BerndtC94,
+  author    = {Donald J. Berndt and
+               James Clifford},
+  title     = {Using Dynamic Time Warping to Find Patterns in Time Series},
+  booktitle = {Knowledge Discovery in Databases: Papers from the 1994 {AAAI} Workshop,
+               Seattle, Washington, July 1994. Technical Report {WS-94-03}},
+  pages     = {359--370},
+  year      = {1994},
+}
+
+@inproceedings{LazebnikSP06,
+  author    = {Svetlana Lazebnik and
+               Cordelia Schmid and
+               Jean Ponce},
+  title     = {Beyond Bags of Features: Spatial Pyramid Matching for Recognizing
+               Natural Scene Categories},
+  booktitle = {CVPR},
+  pages     = {2169--2178},
+  year      = {2006},
+
+}
+
+@article{GreenG04,
+  author    = {Richard D. Green and
+               Ling Guan},
+  title     = {Quantifying and recognizing human movement patterns from monocular
+               video Images-part {I:} a new framework for modeling human motion},
+  journal   = {{IEEE} Trans. Circuits Syst. Video Techn.},
+  volume    = {14},
+  number    = {2},
+  pages     = {179--190},
+  year      = {2004},
+
+}
+
+@article{Caruana97,
+  author    = {Rich Caruana},
+  title     = {Multitask Learning},
+  journal   = {Machine Learning},
+  volume    = {28},
+  number    = {1},
+  pages     = {41--75},
+  year      = {1997},
+}
+
+@inproceedings{ZhouWJZ13,
+  author    = {Qiang Zhou and
+               Gang Wang and
+               Kui Jia and
+               Qi Zhao},
+  title     = {Learning to Share Latent Tasks for Action Recognition},
+  booktitle = {ICCV},
+  year      = {2013},
+
+}
+
+@inproceedings{KimX10,
+  author    = {Seyoung Kim and
+               Eric P. Xing},
+  title     = {Tree-Guided Group Lasso for Multi-Task Regression with Structured
+               Sparsity},
+  booktitle = {ICML},
+  year      = {2010},
+
+}
+@inproceedings{Wang2011,
+  AUTHOR = {Heng Wang and Alexander Kl{\"a}ser and Cordelia Schmid and Cheng-Lin Liu},
+  TITLE = {{Action Recognition by Dense Trajectories}},
+  BOOKTITLE = {CVPR},
+  YEAR = {2011},
+}
+
+@inproceedings{Wang2013,
+  author={Heng Wang and Cordelia Schmid},
+  title={Action Recognition with Improved Trajectories},
+  booktitle= {ICCV},
+  year={2013},
+}
+
+@article{PengWWQ14,
+  author    = {Xiaojiang Peng and
+               Limin Wang and
+               Xingxing Wang and
+               Yu Qiao},
+  title     = {Bag of Visual Words and Fusion Methods for Action Recognition: Comprehensive
+               Study and Good Practice},
+  journal   = {CoRR},
+  volume    = {abs/1405.4506},
+  year      = {2014},
+}
+
+@inproceedings{DarrellP93,
+  author    = {Trevor Darrell and
+               Alex Pentland},
+  title     = {Space-time gestures},
+  booktitle = {Conference on Computer Vision and Pattern Recognition, {CVPR} 1993,
+               15-17 June, 1993, New York, NY, {USA}},
+  pages     = {335--340},
+  year      = {1993},
+}
+
+@article{BobickD01,
+  author    = {Aaron F. Bobick and
+               James W. Davis},
+  title     = {The Recognition of Human Movement Using Temporal Templates},
+  journal   = {{IEEE} Trans. Pattern Anal. Mach. Intell.},
+  volume    = {23},
+  number    = {3},
+  pages     = {257--267},
+  year      = {2001},
+}
+
+@inproceedings{KeSH07,
+  author    = {Yan Ke and
+               Rahul Sukthankar and
+               Martial Hebert},
+  title     = {Spatio-temporal Shape and Flow Correlation for Action Recognition},
+  booktitle = {CVPR},
+  year      = {2007},
+}
+
+@inproceedings{RodriguezAS08,
+  author    = {Mikel D. Rodriguez and
+               Javed Ahmed and
+               Mubarak Shah},
+  title     = {Action {MACH} a spatio-temporal Maximum Average Correlation Height
+               filter for action recognition},
+  booktitle = {CVPR},
+  year      = {2008},
+}
+
+@inproceedings{BlankGSIB05,
+  author    = {Moshe Blank and
+               Lena Gorelick and
+               Eli Shechtman and
+               Michal Irani and
+               Ronen Basri},
+  title     = {Actions as Space-Time Shapes},
+  booktitle = {ICCV},
+  year      = {2005},
+
+}
+
+@inproceedings{YilmazS05,
+  author    = {Alper Yilmaz and
+               Mubarak Shah},
+  title     = {Recognizing Human Actions in Videos Acquired by Uncalibrated Moving
+               Cameras},
+  booktitle = {ICCV},
+  pages     = {150--157},
+  year      = {2005},
+
+}
+
+@INPROCEEDINGS{Dollar05,
+    author = {Piotr Doll¨¢r and Vincent Rabaud and Garrison Cottrell and Serge Belongie},
+    title = {Behavior recognition via sparse spatio-temporal features},
+    booktitle = {In VS-PETS},
+    year = {2005},
+    pages = {65--72}
+}
+
+@inproceedings{SheikhSS05,
+  author    = {Yaser Sheikh and
+               Mumtaz Sheikh and
+               Mubarak Shah},
+  title     = {Exploring the Space of a Human Action},
+  booktitle = {ICCV},
+  pages     = {144--149},
+  year      = {2005},
+
+}
+
+@inproceedings{Zelnik-ManorI01,
+  author    = {Lihi Zelnik{-}Manor and
+               Michal Irani},
+  title     = {Event-Based Analysis of Video},
+  booktitle = {CVPR},
+  pages     = {123--130},
+  year      = {2001},
+
+}
+
+@inproceedings{ChomatC99,
+  author    = {Olivier Chomat and
+               James L. Crowley},
+  title     = {Probabilistic Recognition of Activity using Local Appearance},
+  booktitle = {CVPR},
+  pages     = {2104--2109},
+  year      = {1999},
+
+}
+
+@inproceedings{LaptevL03,
+  author    = {Ivan Laptev and
+               Tony Lindeberg},
+  title     = {Space-time Interest Points},
+  booktitle = {ICCV},
+  pages     = {432--439},
+  year      = {2003},
+}EvgeniouP04,
+  author    = {Theodoros Evgeniou and
+               Massimiliano Pontil},
+  title     = {Regularized multi--task learning},
+  booktitle = {SIGKDD},
+  pages     = {109--117},
+  year      = {2004},
+}
+
+@inproceedings{ArgyriouEP06,
+  author    = {Andreas Argyriou and
+               Theodoros Evgeniou and
+               Massimiliano Pontil},
+  title     = {Multi-Task Feature Learning},
+  booktitle = {Advances in Neural Information Processing Systems 19, Proceedings
+               of the Twentieth Annual Conference on Neural Information Processing
+               Systems, Vancouver, British Columbia, Canada, December 4-7, 2006},
+  pages     = {41--48},
+  year      = {2006},}
+}
+
+@inproceedings{RaoS01,
+  author    = {Cen Rao and
+               Mubarak Shah},
+  title     = {View-Invariance in Action Recognition},
+  booktitle = {CVPR},
+  pages     = {316--322},
+  year      = {2001},
+
+}
+@article{CLK12,
+  author    = {Xi Chen and
+               Qihang Lin and
+               Seyoung Kim and
+               Jaime G. Carbonell and
+               Eric P. Xing},
+  title     = {Smoothing Proximal Gradient Method for General Structured Sparse Learning},
+  journal   = {CoRR},
+  volume    = {abs/1202.3708},
+  year      = {2012},
+
+}
+
+
+@article{Vapnik95,
+ author = {Cortes, Corinna and Vapnik, Vladimir},
+ title = {Support-Vector Networks},
+ journal = {Mach. Learn.},
+ issue_date = {Sept. 1995},
+ volume = {20},
+ number = {3},
+ month = sep,
+ year = {1995},
+ issn = {0885-6125},
+ pages = {273--297},
+ numpages = {25},
+}
+
+@inproceedings{GuyonVBBS91,
+  author    = {Isabelle Guyon and
+               Vladimir Vapnik and
+               Bernhard E. Boser and
+               L{\'{e}}on Bottou and
+               Sara A. Solla},
+  title     = {Structural Risk Minimization for Character Recognition},
+  booktitle = {NIPS},
+  pages     = {471--479},
+  year      = {1991},
+}
+
+@article{frey07affinitypropagation,
+    author = "Brendan J. Frey and Delbert Dueck",
+    title = "Clustering by Passing Messages Between Data Points",
+    journal = "Science",
+    volume = "315",
+    pages = "972--976",
+    year = "2007",
+}
+
+@inproceedings{HouZSS14,
+  author    = {Rui Hou and
+               Amir Roshan Zamir and
+               Rahul Sukthankar and
+               Mubarak Shah},
+  title     = {DaMN - Discriminative and Mutually Nearest: Exploiting Pairwise Category
+               Proximity for Video Action Recognition},
+  booktitle = {ECCV},
+  year      = {2014},
+}
+
+@inproceedings{JayaramanSG14,
+  author    = {Dinesh Jayaraman and
+               Fei Sha and
+               Kristen Grauman},
+  title     = {Decorrelating Semantic Visual Attributes by Resisting the Urge to
+               Share},
+  booktitle = {CVPR},
+  year      = {2014},
+
+}
+
+@InProceedings{Kuehne11,
+   author= "Kuehne, H. and Jhuang, H. and Garrote, E. and Poggio, T. and Serre, T.",
+   title = "{HMDB}: a large video database for human motion recognition",
+   booktitle = {ICCV},
+   year = "2011",
+}
+
+@inproceedings{JegouC12,
+  author    = {Herv{\'{e}} J{\'{e}}gou and
+               Ondrej Chum},
+  title     = {Negative Evidences and Co-occurences in Image Retrieval: The Benefit
+               of {PCA} and Whitening},
+  booktitle = {ECCV},
+  pages     = {774--787},
+  year      = {2012},
+
+}
+
+@inproceedings{WangUKLS09,
+  author = {Wang, Heng and Ullah, Muhammad Muneeb and Kl?ser, Alexander and Laptev, Ivan and Schmid, Cordelia},
+ title = {Evaluation of Local Spatio-temporal Features for Action Recognition.},
+  booktitle = {BMVC},
+  year = 2009
+}
+
+@inproceedings{SadanandC12,
+  author    = {Sreemanananth Sadanand and
+               Jason J. Corso},
+  title     = {Action bank: {A} high-level representation of activity in video},
+  booktitle = {ICCV},
+  year      = {2012},
+}
+
+@inproceedings{YangT14,
+  author    = {Xiaodong Yang and
+               Yingli Tian},
+  title     = {Action Recognition Using Super Sparse Coding Vector with Spatio-temporal Awareness},
+  booktitle = {ECCV},
+  year      = {2014},
+
+}
+
+@inproceedings{DBLP:conf/nips/SimonyanZ14,
+  author    = {Karen Simonyan and
+               Andrew Zisserman},
+  title     = {Two-Stream Convolutional Networks for Action Recognition in Videos},
+  booktitle = {NIPS},
+  pages     = {568--576},
+  year      = {2014},
+}
+
+@inproceedings{PerronninD07,
+  author    = {Florent Perronnin and
+               Christopher R. Dance},
+  title     = {Fisher Kernels on Visual Vocabularies for Image Categorization},
+  booktitle = {2007 {IEEE} Computer Society Conference on Computer Vision and Pattern
+               Recognition {(CVPR} 2007), 18-23 June 2007, Minneapolis, Minnesota,
+               {USA}},
+  year      = {2007},
+
+}
+
+@inproceedings{PerronninSM10,
+  author    = {Florent Perronnin and
+               Jorge S{\'{a}}nchez and
+               Thomas Mensink},
+  title     = {Improving the Fisher Kernel for Large-Scale Image Classification},
+  booktitle = {ECCV},
+  year      = {2010},
+}
